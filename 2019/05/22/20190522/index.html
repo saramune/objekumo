@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>k3sもくもく会に参加しました | おぶじぇくも</title>
+  <meta name="author" content="saramune">
+  
+  <meta name="description" content="みんなラズパイとかに載せようとしててすごい（小並
+AWS上でk3sを試してみるこちらを参考にしました。https://y-ohgi.hatenablog.com/entry/2019/03/25/K3s%E3%82%92AWS%E3%81%AEA1%E3%82%A4%E3%83%B3%E3%82%B">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="k3sもくもく会に参加しました">
+  <meta property="og:site_name" content="おぶじぇくも">
+
+  
+    <meta property="og:image" content="">
+  
+
+  <link href="/objekumo/favicon.png" rel="icon">
+  <link rel="alternate" href="/objekumo/atom.xml" title="おぶじぇくも" type="application/atom+xml">
+  <link rel="stylesheet" href="/objekumo/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+</html>
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/objekumo/">おぶじぇくも</a></h1>
+  <h2><a href="/objekumo/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/objekumo/">Home</a></li>
+    
+      <li><a href="/objekumo/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-05-21T23:45:00.000Z"><a href="/objekumo/2019/05/22/20190522/">2019-05-22</a></time>
+      
+      
+  
+    <h1 class="title">k3sもくもく会に参加しました</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>みんなラズパイとかに載せようとしててすごい（小並</p>
+<h2 id="AWS上でk3sを試してみる"><a href="#AWS上でk3sを試してみる" class="headerlink" title="AWS上でk3sを試してみる"></a>AWS上でk3sを試してみる</h2><p>こちらを参考にしました。<br><a href="https://y-ohgi.hatenablog.com/entry/2019/03/25/K3s%E3%82%92AWS%E3%81%AEA1%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%99" target="_blank" rel="noopener">https://y-ohgi.hatenablog.com/entry/2019/03/25/K3s%E3%82%92AWS%E3%81%AEA1%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%99</a><br>補足としては</p>
+<ul>
+<li>SGはssh用(TCP:22)と、インスタンス間でTCP:6443通信可能にしておく</li>
+<li>ワンライナーのインストール/起動コマンドがあるけどエラーになったので一回<code>pkill -9 k3s</code>して再起動する</li>
+</ul>
+<p>ってするとちゃんとクラスタが組めました。簡単。せっかくAWS上に作ったので、発表されたてのContainer Insights使いたかったけどCloudWatch-Agentコンテナ(Daemonset)が立ち上がらなかったので断念。今度やる。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://saramune.github.io/objekumo/2019/05/22/20190522/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:saramune.github.io/objekumo">
+  </form>
+</div>
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2019 saramune
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/objekumo/js/jquery.imagesloaded.min.js"></script>
+<script src="/objekumo/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/objekumo/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/objekumo/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
