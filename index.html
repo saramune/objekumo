@@ -50,6 +50,45 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-05-23T23:45:00.000Z"><a href="/objekumo/2019/05/24/20190524/">2019-05-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/05/24/20190524/">AWS Solution Architect Professionalに合格しました</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>今日は時間がないので報告だけ。</p>
+<h2 id="短くまとめ"><a href="#短くまとめ" class="headerlink" title="短くまとめ"></a>短くまとめ</h2><ul>
+<li>模試のほうが難しかった気がする</li>
+<li>75問やりきったあとに見直す集中力がない。一問入魂したほうがいい</li>
+<li>ホワイトペーパーとblackbeltは全部ちゃんと目を通したほうがいい（当たり前</li>
+</ul>
+<p>点数ギリギリだったのでちゃんと復習します。。。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-05-21T23:45:00.000Z"><a href="/objekumo/2019/05/22/20190522/">2019-05-22</a></time>
       
       
@@ -433,41 +472,6 @@
 <li>iphoneからとかのアクセスが多かったら/appleなんちゃらへのアクセスも必然的に多くなるのでエラー率が上昇する</li>
 </ul>
 <p>ということかな、と。解決策としてはCloudFrontのエラーキャッシュ時間を短くすることくらいか。S3に配置してる静的ページなのでそれで問題ないと思われる。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-05-06T23:45:00.000Z"><a href="/objekumo/2019/05/07/20190507/">2019-05-07</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/05/07/20190507/">SQSをVPC Endpointから使うときにハマった話</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>VPC Endpointを使うとセキュアだったりAWS内部で通信が完結したりいいことずくめです。最近SQSをVPC内のLambdaから利用することがあったときにハマったメモです。</p>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>SQSのVPC Endpointを利用するときは、<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client = boto3.client(<span class="string">'sqs'</span>, endpoint=<span class="string">'エンドポイントのDNS'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>こんな感じでエンドポイント名を明示的に指定しないとダメ。エンドポイントのDNSというところは、作っておいたSQSのVPCエンドポイント見に行ったら書いてある。ゾーンごとにDNS切られてたり、東京リージョンの場合はsqs.ap-northeast-1.amazonaws.comでたぶんどのゾーンからもアクセスができる(と思われる)。</p>
 
       
     </div>
