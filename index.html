@@ -50,11 +50,46 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2019-06-12T23:45:00.000Z"><a href="/objekumo/2019/06/13/20190621/">2019-06-13</a></time>
+        <time datetime="2019-06-24T23:45:00.000Z"><a href="/objekumo/2019/06/25/20190625/">2019-06-25</a></time>
       
       
   
-    <h1 class="title"><a href="/objekumo/2019/06/13/20190621/">Dockerの仕組みについて勉強しよう</a></h1>
+    <h1 class="title"><a href="/objekumo/2019/06/25/20190625/">Systems Manager触ってみたメモ</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="Run-Command"><a href="#Run-Command" class="headerlink" title="Run Command"></a>Run Command</h2><p>一発コマンド叩くイメージ。Windows Updateとかならこれでいける。</p>
+<h2 id="Automation"><a href="#Automation" class="headerlink" title="Automation"></a>Automation</h2><p>Run Commandなどを複数組み合わせて特定の処理を自動化するイメージ。Automationは同じ作業を一気に複数台のインスタンスに当てられない。なぜ？？？AWS用のPVドライバとかのバージョンアップとかもできる（らしい）</p>
+<p>毎日静止点をとってAMIバックアップをとりたい、という要件があるときはAutomationを使えばいいのかなぁ。Run Commandでアプリをとめてからバックアップ、みたいな。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-06-20T23:45:00.000Z"><a href="/objekumo/2019/06/21/20190621/">2019-06-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/06/21/20190621/">Dockerの仕組みについて勉強しよう</a></h1>
   
 
     </header>
@@ -363,54 +398,6 @@
 </ul>
 </li>
 </ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-05-28T23:45:00.000Z"><a href="/objekumo/2019/05/29/20190529/">2019-05-29</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/05/29/20190529/">AWSで負荷試験しようとするとサチる</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>未解決。</p>
-<h2 id="状況"><a href="#状況" class="headerlink" title="状況"></a>状況</h2><ul>
-<li>c5.xlargeインスタンスからApache Bench使ってリクエストを投げる</li>
-<li>ターゲットはCLB配下のc4.8xlargeインスタンス２台<ul>
-<li>内部はhttpdで/var/www/htmlにindex.htmlがあるのみ</li>
-</ul>
-</li>
-<li>2000req/sくらいしかでない</li>
-</ul>
-<p>感覚的にだけどどこかでサチっている気がする。</p>
-<ul>
-<li>httpdのチューニング</li>
-<li>CLB</li>
-<li>帯域は足りてると思うのだけど</li>
-</ul>
-<p>あたりを再調査する予定。</p>
 
       
     </div>
