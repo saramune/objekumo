@@ -50,6 +50,49 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-05-08T23:45:00.000Z"><a href="/objekumo/2019/05/09/20190509/">2019-05-09</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/05/09/20190509/">Linuxのメモリ使用量について</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>いっつも忘れるので</p>
+<h2 id="sar-r"><a href="#sar-r" class="headerlink" title="sar -r"></a>sar -r</h2><p>で見ましょう。</p>
+<ul>
+<li>kbmemfree: あいてるやつ</li>
+<li>kbmemused: つかってるやつ(buffer, cacheも含む)</li>
+<li>%memused: 使用率</li>
+<li>kbbuffers: カーネルバッファ(でかくても大丈夫)</li>
+<li>kbcached: カーネルキャッシュ(でかくても大丈夫)</li>
+</ul>
+<p>なので、kbmemused - kbbbuffers - kbcachedが、アプリで使用しているメモリ量。ここが実メモリ量に近くなっていればメモリパンパンということ。</p>
+<p>DataDogで見てる場合はsystem.mem.usableとかみると、「空き」がわかる。ここでいう空きとは、kbmemfree + (kbbuffers + kbcached)(カーネルですぐ開放できる領域)なので注意。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-05-07T23:45:00.000Z"><a href="/objekumo/2019/05/08/20190508/">2019-05-08</a></time>
       
       
@@ -555,102 +598,13 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-03-11T08:53:41.000Z"><a href="/objekumo/2018/03/11/jawsdays2018/">2018-03-11</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2018/03/11/jawsdays2018/">JAWS DAYS 2018に参加して分かった、エンジニアとバンドマンの関係</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="気づき"><a href="#気づき" class="headerlink" title="気づき"></a>気づき</h2><ul>
-<li>JAWS DAYS然りエンジニアのイベントって音楽フェスと同じじゃね？</li>
-<li>バンドマンとしての立ち振舞をエンジニア業にも応用できそう</li>
-</ul>
-<h2 id="JAWS-DAYS-2018"><a href="#JAWS-DAYS-2018" class="headerlink" title="JAWS DAYS 2018"></a>JAWS DAYS 2018</h2><p>今日はJAWS DAYS 2018に参加してきました。<br>朝５時起きで、新幹線に乗り、五反田へ。<br>拝見したSessionは以下の通り。<br>今興味のあるコンテナ系と、セキュリティ系を中心にって感じです。</p>
-<ul>
-<li>A story of cloud journey with Community<ul>
-<li>ヨーダに巻き込まれて色んなイベントを運営し、コミュニティをつないでいったお話。</li>
-</ul>
-</li>
-<li>コンテナでウェイウェイ（仮）<ul>
-<li>AWSが提供するコンテナ系サービスの概要と、本番環境での運用例。後半は英語で半分くらいしかわからなかった(；´Д｀)</li>
-</ul>
-</li>
-<li>ランチタイムセッション<ul>
-<li>アールスリーインスティテュート<ul>
-<li>漫才のような面白い会社紹介。THE 大阪って感じ。</li>
-</ul>
-</li>
-<li>株式会社 はてな<ul>
-<li>Mackerelの紹介。サーバ監視しましょうね、というお話。</li>
-</ul>
-</li>
-<li>アイレット株式会社<ul>
-<li>スマホアプリ作るんじゃなくてLINE Botで作ろうぜってお話。</li>
-</ul>
-</li>
-<li>Sansan株式会社<ul>
-<li>sansan、Eight、そこで使われているAWSサービスについて。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>「AWS Technical Evangelists Special talk session -スペシャルトークセッション AWSとユーザーコミュニティが生み出すNo borderな未来-」<ul>
-<li>海外ゲストエバンジェリストへの質問コーナー。</li>
-</ul>
-</li>
-<li>サービスをスケールさせるために〜AWSとAWS利用者の技術<ul>
-<li>AWSのインフラハードウェア頑張ってます、っていうのと耐障害について。</li>
-</ul>
-</li>
-<li>コンテナを守る技術 2018<ul>
-<li>コンテナとホストの脆弱性をチェックする方法について。</li>
-</ul>
-</li>
-<li>AWSセキュリティ事始め〜基礎からはじめてクラウドセキュリティの恩恵を受ける〜<ul>
-<li>クラウドセキュリティの基本のき。</li>
-</ul>
-</li>
-</ul>
-<p>また実際に使う、ってなったときに<br>いろいろ参考にできる知見が増えたかなと思います。<br>登壇者の皆様、貴重なお話、ありがとうございました。<br>運営の皆様、お疲れ様でした。ありがとうございました。</p>
-<p>[<a href="https://togetter.com/li/1207148:embed:cite]" target="_blank" rel="noopener">https://togetter.com/li/1207148:embed:cite]</a></p>
-<h2 id="ところで、JAWS-DAYSってフェスじゃね？"><a href="#ところで、JAWS-DAYSってフェスじゃね？" class="headerlink" title="ところで、JAWS DAYSってフェスじゃね？"></a>ところで、JAWS DAYSってフェスじゃね？</h2><p>タイムテーブルを見てたときに、そう思ったんです。<br>RADIO CRAZYとか、COUNTDOWN JAPANとか、<br>でっかいホール借りて、いろんなアーティストが出演して<br>自分のスキなアーティスト見に行って、刺激を受ける。<br>JAWS DAYSも、全く同じじゃん、と。<br>ステージで発表（演奏）する人がいて、それを聴く人がいる。<br>聴いた人の中には、刺激を受けて自分でもAWSを利用（楽器を演奏）する人も出てくる。<br>そう考えると、こう置き換えられそう。</p>
-<ul>
-<li>JAWS DAYSのような大規模イベント = フェス</li>
-<li>国内/海外のすごい人を呼んでの講演 = メジャーミュージシャンのライブ</li>
-<li>各地域の勉強会 = ライブハウスでのインディーバンドのライブ</li>
-</ul>
-<p>そう思えば、会社の中で閉じてるエンジニアは、<br>大学のサークルの中でしか演奏しないバンドマンのようなもので、<br>もちろん先輩の演奏見たり、自主練で成長するけれど<br>やっぱり外でライブするほうが格段に成長スピードが早いわけです。<br>単純に外のステージに立つということだけでも成長しますし、<br>いろんなフィードバックももらえます。<br>僕自身、バンドマンとしてはサークルから飛び出して<br>外でライブをすることで成長してきましたが、<br>エンジニアとしては今まで会社に閉じていました。<br>でも、<b>同じ様にやればいいんだ</b>、ってわかりました。<br>なんかまぁよくよく考えれば当たり前な話かも知れませんが、<br>僕にとってはブレイクスルーだったのです。<br>そうと分かれば、まずはライブハウスでライブができるように頑張ろうかなと思います。<br><span style="font-size: 80%">バンドと違うのは１人でやらんとあかんってことかな…</span></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
     <a href="/objekumo/page/2/" class="alignleft prev">Prev</a>
   
+  
+    <a href="/objekumo/page/4/" class="alignright next">Next</a>
   
   <div class="clearfix"></div>
 </nav></div></div>

@@ -50,6 +50,53 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-05-29T23:45:00.000Z"><a href="/objekumo/2019/05/30/20190530/">2019-05-30</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/05/30/20190530/">AWSで負荷試験しようとするとサチる2</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>未だ未解決。</p>
+<h2 id="状況"><a href="#状況" class="headerlink" title="状況"></a>状況</h2><ul>
+<li>httpdのチューニング<ul>
+<li>nginx変えてチューニングしたけど変わらず</li>
+</ul>
+</li>
+<li>CLB<ul>
+<li>直接いってみたけど変わらず</li>
+</ul>
+</li>
+<li>帯域は足りてると思うのだけど<ul>
+<li>足りてないかも。。。ここを重点的に確認する。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-05-28T23:45:00.000Z"><a href="/objekumo/2019/05/29/20190529/">2019-05-29</a></time>
       
       
@@ -433,49 +480,6 @@
 <p>なので明示的にhostを書いてあげます。リージョンは合わせたほうがよいかも？（よくわかってない</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S3Connection(host=&apos;s3-ap-northeast-1.amazonaws.com&apos;)</span><br></pre></td></tr></table></figure>
 <p>とりあえずできたっぽいのでよし。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-05-08T23:45:00.000Z"><a href="/objekumo/2019/05/09/20190509/">2019-05-09</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/05/09/20190509/">Linuxのメモリ使用量について</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>いっつも忘れるので</p>
-<h2 id="sar-r"><a href="#sar-r" class="headerlink" title="sar -r"></a>sar -r</h2><p>で見ましょう。</p>
-<ul>
-<li>kbmemfree: あいてるやつ</li>
-<li>kbmemused: つかってるやつ(buffer, cacheも含む)</li>
-<li>%memused: 使用率</li>
-<li>kbbuffers: カーネルバッファ(でかくても大丈夫)</li>
-<li>kbcached: カーネルキャッシュ(でかくても大丈夫)</li>
-</ul>
-<p>なので、kbmemused - kbbbuffers - kbcachedが、アプリで使用しているメモリ量。ここが実メモリ量に近くなっていればメモリパンパンということ。</p>
-<p>DataDogで見てる場合はsystem.mem.usableとかみると、「空き」がわかる。ここでいう空きとは、kbmemfree + (kbbuffers + kbcached)(カーネルですぐ開放できる領域)なので注意。</p>
 
       
     </div>

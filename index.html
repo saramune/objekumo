@@ -50,6 +50,47 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-06-25T23:45:00.000Z"><a href="/objekumo/2019/06/26/20190626/">2019-06-26</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/06/26/20190626/">Workspaces触ってみたメモ</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Windows環境が欲しかったのでWorkspaces使ってみました。</p>
+<h1 id="ユーザはWorkspacesで管理-or-AD連携"><a href="#ユーザはWorkspacesで管理-or-AD連携" class="headerlink" title="ユーザはWorkspacesで管理 or AD連携"></a>ユーザはWorkspacesで管理 or AD連携</h1><p>今回はお手軽なWorkspaces管理で。</p>
+<h1 id="環境はWindows7-or-10-or-Linux"><a href="#環境はWindows7-or-10-or-Linux" class="headerlink" title="環境はWindows7 or 10 or Linux"></a>環境はWindows7 or 10 or Linux</h1><p>今回はEdgeを使いたかったので10を選択。一緒にスペックも選択。</p>
+<h1 id="作成後、ユーザ宛にログインに必要な情報がメールで通知される"><a href="#作成後、ユーザ宛にログインに必要な情報がメールで通知される" class="headerlink" title="作成後、ユーザ宛にログインに必要な情報がメールで通知される"></a>作成後、ユーザ宛にログインに必要な情報がメールで通知される</h1><p>環境作成後、メールが来ました。クライアントアプリのDLリンクとか、認証コードとか。</p>
+<h1 id="使う"><a href="#使う" class="headerlink" title="使う"></a>使う</h1><p>あとは専用のクライアントアプリからリモデみたいな感じで使えます。</p>
+<h1 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h1><ul>
+<li>Windows10といいつつWindows Server2016</li>
+<li>裏で何やってるかわからんけどVPCが新たに作られるっぽいのでVPCの制限数に注意（他にもなにか作られてるかも</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-06-24T23:45:00.000Z"><a href="/objekumo/2019/06/25/20190625/">2019-06-25</a></time>
       
       
@@ -351,53 +392,6 @@
         <p>解決方向へ。</p>
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>linuxから投げたらいい感じに速度出た。</p>
 <p>Windows(c5.xlargeとか)からab使って投げていたけど、linuxに変えただけでめっちゃ速度出た。のでWindowsのなにかで絞られていたのだろう。それを踏まえてJMeterでMaster(Windows) - Slave(Linux)構成を組んで10,000[req/s]を出すにはどれくらい必要なのか計測中。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-05-29T23:45:00.000Z"><a href="/objekumo/2019/05/30/20190530/">2019-05-30</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/05/30/20190530/">AWSで負荷試験しようとするとサチる2</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>未だ未解決。</p>
-<h2 id="状況"><a href="#状況" class="headerlink" title="状況"></a>状況</h2><ul>
-<li>httpdのチューニング<ul>
-<li>nginx変えてチューニングしたけど変わらず</li>
-</ul>
-</li>
-<li>CLB<ul>
-<li>直接いってみたけど変わらず</li>
-</ul>
-</li>
-<li>帯域は足りてると思うのだけど<ul>
-<li>足りてないかも。。。ここを重点的に確認する。</li>
-</ul>
-</li>
-</ul>
 
       
     </div>
