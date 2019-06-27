@@ -50,6 +50,44 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-06-27T23:45:00.000Z"><a href="/objekumo/2019/06/28/20190628/">2019-06-28</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/06/28/20190628/">AWS Summit Osakaに参加してきました</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="基調講演"><a href="#基調講演" class="headerlink" title="基調講演"></a>基調講演</h2><p>顧客事例交えつつ、AWSのこれまでを振り返る感じ</p>
+<h2 id="クラウドネイティブなアプリケーション開発入門"><a href="#クラウドネイティブなアプリケーション開発入門" class="headerlink" title="クラウドネイティブなアプリケーション開発入門"></a>クラウドネイティブなアプリケーション開発入門</h2><p>やっぱり要素がたくさんあるので駆け足な感じでしたが、一通りモダンなアプリケーションに必要なことをコンパクトにまとめられていました。ベスト・プラクティスがやっぱり大事。</p>
+<h2 id="クラウドへシステムをマイグレーションするときの整理指針"><a href="#クラウドへシステムをマイグレーションするときの整理指針" class="headerlink" title="クラウドへシステムをマイグレーションするときの整理指針"></a>クラウドへシステムをマイグレーションするときの整理指針</h2><p>5W1Hに沿って移行プロジェクトの進め方を解説。具体的なツールについても。</p>
+<h2 id="EXPO"><a href="#EXPO" class="headerlink" title="EXPO"></a>EXPO</h2><p>知ってる人に声をかけたりDataDog Tシャツもらったりしました。</p>
+<p>##　所感</p>
+<p>まだまだ関西はクラウドの第一歩って感じですね。これをきっかけに導入が進んだり考え方が変わったりしたらいいなって感じです。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-06-25T23:45:00.000Z"><a href="/objekumo/2019/06/26/20190626/">2019-06-26</a></time>
       
       
@@ -357,41 +395,6 @@
         <p>月曜日は旅行明けで疲れたのでお休み<br>火曜日はこのために早く出たのでお休み</p>
 <h2 id="午前：GCPのサービス紹介"><a href="#午前：GCPのサービス紹介" class="headerlink" title="午前：GCPのサービス紹介"></a>午前：GCPのサービス紹介</h2><p>コンピューティング、ストレージ、機械学習など、基本的なサービスの説明。AWSとの違いを意識しながら聞いてました。Cloud Aceのひとが講師だったので実践的なコマンドとかも教えてもらえたのがよかったです。</p>
 <h2 id="午後：アーキテクト講座"><a href="#午後：アーキテクト講座" class="headerlink" title="午後：アーキテクト講座"></a>午後：アーキテクト講座</h2><p>よくあるアーキテクトパターンとセキュリティのお話。アーキテクトパターンはAWSの考え方が結構使えるところが多かった。AWSのサービスと同じところ、違うところを意識すれば難しくなさそう。セキュリティは結構違ったのでここらへんはしっかり理解する必要がありそう。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-05-30T23:45:00.000Z"><a href="/objekumo/2019/05/31/20190531/">2019-05-31</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/05/31/20190531/">AWSで負荷試験しようとするとサチる3</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>解決方向へ。</p>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>linuxから投げたらいい感じに速度出た。</p>
-<p>Windows(c5.xlargeとか)からab使って投げていたけど、linuxに変えただけでめっちゃ速度出た。のでWindowsのなにかで絞られていたのだろう。それを踏まえてJMeterでMaster(Windows) - Slave(Linux)構成を組んで10,000[req/s]を出すにはどれくらい必要なのか計測中。</p>
 
       
     </div>
