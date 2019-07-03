@@ -50,6 +50,40 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-07-03T23:45:00.000Z"><a href="/objekumo/2019/07/04/20190704/">2019-07-04</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/07/04/20190704/">nginxのログにALBのIPが出る問題</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>他のログはクライアントIPが出てるのに、一部のログでALBのIPが出ている。</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>nginxの設定上、x-forwarded-forではなくtrue-client-ipというヘッダを使って、クライアントIPを判別していた。true-client-ipはCDNをALBの前段に挟んでいるときに使うヘッダのようで、そのヘッダがないとき（たとえばALBに直接アクセスがきたとき）にはALBのIPで出てしまうって感じ。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-06-27T23:45:00.000Z"><a href="/objekumo/2019/06/28/20190628/">2019-06-28</a></time>
       
       
@@ -360,41 +394,6 @@
 </li>
 </ul>
 <p>うまくいかないうまくいかないと思ったらブラウザのキャッシュのせいでした。CloudFront系の確認は都度シークレットウインドウでやりましょう。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-06-04T23:45:00.000Z"><a href="/objekumo/2019/06/05/20190605/">2019-06-05</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/06/05/20190605/">Cloud OnBoard受けてきました</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>月曜日は旅行明けで疲れたのでお休み<br>火曜日はこのために早く出たのでお休み</p>
-<h2 id="午前：GCPのサービス紹介"><a href="#午前：GCPのサービス紹介" class="headerlink" title="午前：GCPのサービス紹介"></a>午前：GCPのサービス紹介</h2><p>コンピューティング、ストレージ、機械学習など、基本的なサービスの説明。AWSとの違いを意識しながら聞いてました。Cloud Aceのひとが講師だったので実践的なコマンドとかも教えてもらえたのがよかったです。</p>
-<h2 id="午後：アーキテクト講座"><a href="#午後：アーキテクト講座" class="headerlink" title="午後：アーキテクト講座"></a>午後：アーキテクト講座</h2><p>よくあるアーキテクトパターンとセキュリティのお話。アーキテクトパターンはAWSの考え方が結構使えるところが多かった。AWSのサービスと同じところ、違うところを意識すれば難しくなさそう。セキュリティは結構違ったのでここらへんはしっかり理解する必要がありそう。</p>
 
       
     </div>
