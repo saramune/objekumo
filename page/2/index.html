@@ -50,6 +50,56 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-06-05T23:45:00.000Z"><a href="/objekumo/2019/06/06/20190606/">2019-06-06</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/06/06/20190606/">それキャッシュじゃね？(API Gateway)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>API Gatewayいっつもハマる</p>
+<h2 id="CloudFront-API-Gateway-Lambda"><a href="#CloudFront-API-Gateway-Lambda" class="headerlink" title="CloudFront + API Gateway + Lambda"></a>CloudFront + API Gateway + Lambda</h2><p>よくある構成なサーバレスのWebアプリ。LambdaでSSRするタイプ。</p>
+<ul>
+<li>API Gatewayでやること<ul>
+<li>デプロイ（！）</li>
+<li>使用量プランとのヒモ付とAPIキーの発行</li>
+</ul>
+</li>
+<li>CloudFrontでやること<ul>
+<li>オリジンの設定でx-api-keyをヘッダにつける</li>
+<li>BehaviorsではOriginヘッダを通すようにする</li>
+<li>キャッシュはなし</li>
+<li>POSTメソッド許可</li>
+<li>HTTPはHTTPSにリダイレクト</li>
+</ul>
+</li>
+</ul>
+<p>うまくいかないうまくいかないと思ったらブラウザのキャッシュのせいでした。CloudFront系の確認は都度シークレットウインドウでやりましょう。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-06-04T23:45:00.000Z"><a href="/objekumo/2019/06/05/20190605/">2019-06-05</a></time>
       
       
@@ -414,67 +464,6 @@
 </ul>
 </li>
 </ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-05-13T23:45:00.000Z"><a href="/objekumo/2019/05/14/20190514/">2019-05-14</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/05/14/20190514/">SnowballとDirect ConnectとS3 TAの比較</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>たとえばS3に大量のデータをアップロードしたい。という場合の選択肢としてSnowballとDirect ConnectとS3 TAが候補にあります（他にもあるかな。。。）。比較してみよー。</p>
-<h2 id="Snowball"><a href="#Snowball" class="headerlink" title="Snowball"></a>Snowball</h2><ul>
-<li>50TBと80TBから選択</li>
-<li>配送とAWSへのインポートだけで1週間半くらいかかる</li>
-<li>に加えてこちら側でSnowballへの転送時間</li>
-<li>料金は80TBなら基本料金$250 + 保持時間による<ul>
-<li><a href="https://aws.amazon.com/jp/snowball/pricing/" target="_blank" rel="noopener">https://aws.amazon.com/jp/snowball/pricing/</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="Direct-Connect"><a href="#Direct-Connect" class="headerlink" title="Direct Connect"></a>Direct Connect</h2><ul>
-<li>最大10Gbpsの専用線をはれる</li>
-<li>セットアップまでは1ヶ月くらいかかる？？？</li>
-<li>に加えてデータの転送時間</li>
-<li>料金はパートナーのプラン？？？ + 転送料</li>
-</ul>
-<h2 id="S3-TA"><a href="#S3-TA" class="headerlink" title="S3 TA"></a>S3 TA</h2><ul>
-<li>なんかS3への転送速度があがるらしい</li>
-<li>たとえば日本からアメリカのリージョンにあるバケットにアクセスする場合など</li>
-</ul>
-<h2 id="まとめ？"><a href="#まとめ？" class="headerlink" title="まとめ？"></a>まとめ？</h2><ul>
-<li>公式にもありますが、TB級のデータを1~2週間で送りたいならSnowball<ul>
-<li><a href="https://aws.amazon.com/jp/snowball/faqs/" target="_blank" rel="noopener">https://aws.amazon.com/jp/snowball/faqs/</a></li>
-</ul>
-</li>
-<li>そこまで急がない or 今後も専用線として利用するならDirect Connect</li>
-<li>TB級でなければS3 TAとmulti part upload</li>
-</ul>
-<p>とかでしょうか。料金が気になる。</p>
 
       
     </div>
