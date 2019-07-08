@@ -50,6 +50,39 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-06-09T23:45:00.000Z"><a href="/objekumo/2019/06/10/20190610/">2019-06-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/06/10/20190610/">CloudNative Kansai#3でLTしました。</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Docker Meetup Kansaiでも話した内容ですが、みんな勉強会とかしようよって話でLTしました。もっと喋り慣れが必要だなぁと思いましたまる。<br><a href="https://www.slideshare.net/ssuserb283b5/ss-149062453" target="_blank" rel="noopener">https://www.slideshare.net/ssuserb283b5/ss-149062453</a><br>今はまだコンテナは趣味って感じですね。仕事にしたかったら転職するしかないけどまだそのつもりはないので。。。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-06-05T23:45:00.000Z"><a href="/objekumo/2019/06/06/20190606/">2019-06-06</a></time>
       
       
@@ -404,66 +437,6 @@
 <li>RAID1: 複数のEBSに同じ内容を書き込む。バックアップ向け</li>
 </ul>
 <p>やり方は以下。<br><a href="https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/raid-config.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/raid-config.html</a><br><a href="https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/WindowsGuide/raid-config.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/WindowsGuide/raid-config.html</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-05-16T23:45:00.000Z"><a href="/objekumo/2019/05/17/20190517/">2019-05-17</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/05/17/20190517/">CloudHSMについて</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>使ったことはないですが、試験勉強してたら出てきたので。</p>
-<h2 id="CloudHSMとは"><a href="#CloudHSMとは" class="headerlink" title="CloudHSMとは"></a>CloudHSMとは</h2><p>Hardware Security Module。以下の特徴がある。</p>
-<ul>
-<li>VPC内に冗長化された専用のハードウェアが割り当てられる</li>
-<li>HSM内で暗号化鍵の管理を行う</li>
-<li>もろもろのセキュリティ基準を満たしている</li>
-</ul>
-<p>こんな感じで使う</p>
-<ul>
-<li>SSLターミネーション<ul>
-<li>ELB→EC2な構成で、SSLのところだけHSMに任せるようにnginxとかに設定することができる</li>
-</ul>
-</li>
-<li>発行認証局 (CA) 向けのプライベートキーの保護</li>
-</ul>
-<p>使い所</p>
-<ul>
-<li>セキュリティポリシー上そうしないといけない、みたいな場合で使うんだろうなぁ</li>
-<li>基本的にはSSLはELBで、鍵はKMSで十分という認識</li>
-</ul>
-<p>でも、お高いんでしょう？</p>
-<ul>
-<li>1.81USD/hのみ（東京）<ul>
-<li>なんか昔の記事を見ていると初期費がかかるみたいなのもあるけど、それはCloudHSM Classicというらしい</li>
-<li>Classicは2020/4までに移行しないといけないらしい</li>
-</ul>
-</li>
-</ul>
 
       
     </div>
