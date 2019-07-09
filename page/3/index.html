@@ -50,6 +50,49 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-05-19T23:45:00.000Z"><a href="/objekumo/2019/05/20/20190520/">2019-05-20</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/05/20/20190520/">EBSのRAID構成</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>使ったことはないですが、試験勉強してたら出てきたのでシリーズ</p>
+<h2 id="RAIDとは"><a href="#RAIDとは" class="headerlink" title="RAIDとは"></a>RAIDとは</h2><blockquote>
+<p>複数のHDDをひとつのドライブのように認識・表示させる技術です。</p>
+</blockquote>
+<p>情報処理の試験でくらいしか見たことなかったけど、普通に使われるんですね。</p>
+<h2 id="EBSにおけるRAID"><a href="#EBSにおけるRAID" class="headerlink" title="EBSにおけるRAID"></a>EBSにおけるRAID</h2><p>ソフトウェアで制御する。主に以下。</p>
+<ul>
+<li>RAID0: 複数のEBSをまとめて合計の容量およびスループットを得る</li>
+<li>RAID1: 複数のEBSに同じ内容を書き込む。バックアップ向け</li>
+</ul>
+<p>やり方は以下。<br><a href="https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/raid-config.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/raid-config.html</a><br><a href="https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/WindowsGuide/raid-config.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/WindowsGuide/raid-config.html</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-05-16T23:45:00.000Z"><a href="/objekumo/2019/05/17/20190517/">2019-05-17</a></time>
       
       
@@ -510,49 +553,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-02-02T01:48:36.932Z"><a href="/objekumo/2019/02/02/helix2/">2019-02-02</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/02/02/helix2/">Helixその後</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="もげた"><a href="#もげた" class="headerlink" title="もげた"></a>もげた</h1><ul>
-<li>左手側もげました</li>
-<li>右手側に挿せばいいんじゃね</li>
-<li>キー配列が左右反転する…だと</li>
-<li>USBんとこ買い直し</li>
-<li>でもガッチリはんだづけしてるので取るのめんどい</li>
-<li>基盤からやり直すかーポチ</li>
-<li><a href="https://gist.github.com/unak/b2defbcb830c579c28276318e0e616cf" target="_blank" rel="noopener">https://gist.github.com/unak/b2defbcb830c579c28276318e0e616cf</a></li>
-<li>よくよく考えたら配列はソフトウェアで制御してんだから…</li>
-<li>基盤とUSB microが余る←いまここ</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -574,6 +574,61 @@
   
 
   
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/objekumo/tags/AWS-API-Gateway/">AWS, API Gateway</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-Classic-VPN/">AWS, Classic VPN</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-CloudFront/">AWS, CloudFront</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-CloudFront-ELB/">AWS, CloudFront, ELB</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-CloudHSM-資格試験/">AWS, CloudHSM, 資格試験</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-EBS-資格試験/">AWS, EBS, 資格試験</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-EC2-RHEL7/">AWS, EC2, RHEL7</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-EKS/">AWS, EKS</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-Route53/">AWS, Route53</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-S3/">AWS, S3</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-SQS/">AWS, SQS</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-SSM-Systems-Manager/">AWS, SSM, Systems Manager</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-Snowball-Direct-Connect-S3-資格試験/">AWS, Snowball, Direct Connect, S3, 資格試験</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-WorkSpaces/">AWS, WorkSpaces</a><small>2</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-k3s-勉強会/">AWS, k3s, 勉強会</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-nginx-ALB-ELB/">AWS, nginx, ALB, ELB</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-勉強会/">AWS, 勉強会</a><small>2</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-負荷試験/">AWS, 負荷試験</a><small>3</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-資格試験/">AWS, 資格試験</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS-資格試験-S3/">AWS, 資格試験, S3</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/CloudNative-勉強会/">CloudNative, 勉強会</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/Docker-勉強会/">Docker, 勉強会</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/GCP-勉強会/">GCP, 勉強会</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/Linux/">Linux</a><small>1</small></li>
+  
+  </ul>
+</div>
+
 </aside>
     <div class="clearfix"></div>
   </div>
