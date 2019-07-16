@@ -6,9 +6,8 @@
   <title>EKS workshop挑戦記 | おぶじぇくも</title>
   <meta name="author" content="saramune">
   
-  <meta name="description" content="EKS workshopというものがあるので、やってみました。https://eksworkshop.com/
-IntroductionKubernetesとは、EKSとは。読むだけ。EKSの内部の仕組みが書いてあるのがよかった。（ドキュメント見たら書いてるんだろうけど。
-Start the wor">
+  <meta name="description" content="EKS workshopというものがあるので、やってみました。(続き)https://eksworkshop.com/
+Using Spot Instances with EKS(所要時間：30分)タイトルの通り。Cfn使ってEKS最適化AMIをクラスターに加えてる。Cfn使ってるので楽だけど、ふー">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -53,7 +52,7 @@ Start the wor">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2019-07-07T23:45:00.000Z"><a href="/objekumo/2019/07/08/20190708/">2019-07-08</a></time>
+        <time datetime="2019-07-16T23:45:00.000Z"><a href="/objekumo/2019/07/17/20190717/">2019-07-17</a></time>
       
       
   
@@ -63,37 +62,10 @@ Start the wor">
     </header>
     <div class="entry">
       
-        <p>EKS workshopというものがあるので、やってみました。<br><a href="https://eksworkshop.com/" target="_blank" rel="noopener">https://eksworkshop.com/</a></p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Kubernetesとは、EKSとは。読むだけ。EKSの内部の仕組みが書いてあるのがよかった。（ドキュメント見たら書いてるんだろうけど。</p>
-<h2 id="Start-the-workshop…-所要時間：10分"><a href="#Start-the-workshop…-所要時間：10分" class="headerlink" title="Start the workshop…(所要時間：10分)"></a>Start the workshop…(所要時間：10分)</h2><ul>
-<li>Admin権限のIAMユーザ作成</li>
-<li>Cloud9構築</li>
-<li>cliのインストール、ソースの取得</li>
-</ul>
-<h2 id="Launch-using-eksctl-所要時間：20分"><a href="#Launch-using-eksctl-所要時間：20分" class="headerlink" title="Launch using eksctl(所要時間：20分)"></a>Launch using eksctl(所要時間：20分)</h2><ul>
-<li>eksctlのインストール</li>
-<li>EKSクラスタの構築（ここだけで15分くらい待つ）</li>
-</ul>
-<h2 id="Deploy-the-Kubernetes-Dashboard-所要時間：5分"><a href="#Deploy-the-Kubernetes-Dashboard-所要時間：5分" class="headerlink" title="Deploy the Kubernetes Dashboard(所要時間：5分)"></a>Deploy the Kubernetes Dashboard(所要時間：5分)</h2><ul>
-<li>Dashboardのデプロイ</li>
-</ul>
-<h2 id="Deploy-the-Example-Microservices-所要時間：20分"><a href="#Deploy-the-Example-Microservices-所要時間：20分" class="headerlink" title="Deploy the Example Microservices(所要時間：20分)"></a>Deploy the Example Microservices(所要時間：20分)</h2><ul>
-<li>サンプルのmicroservice(nodeのバックエンド, crystalのバックエンド, frontend)</li>
-<li>各podがどのノードにあって、っていうのが可視化されるアプリなので、podをスケールアウトするとその様子がみてとれる。よくできてる。</li>
-</ul>
-<h2 id="Helm-所要時間：35分"><a href="#Helm-所要時間：35分" class="headerlink" title="Helm(所要時間：35分)"></a>Helm(所要時間：35分)</h2><ul>
-<li>helmを使ってnginxをデプロイ</li>
-<li>helmを使って先程のmicroserviceをデプロイ、ロールバック</li>
-</ul>
-<h2 id="Health-Checks-所要時間：15分"><a href="#Health-Checks-所要時間：15分" class="headerlink" title="Health Checks(所要時間：15分)"></a>Health Checks(所要時間：15分)</h2><ul>
-<li>liveness probe(podの死活)とreadiness probe(podへのトラフィック送信可否)について</li>
-</ul>
-<h2 id="Autoscaling-our-Applications-and-Clusters-所要時間：20分"><a href="#Autoscaling-our-Applications-and-Clusters-所要時間：20分" class="headerlink" title="Autoscaling our Applications and Clusters(所要時間：20分)"></a>Autoscaling our Applications and Clusters(所要時間：20分)</h2><ul>
-<li>podのAutoScaling、nodeのAutoScalingについて</li>
-<li>負荷をかけて実際にスケールアウトすることを確認する</li>
-</ul>
-<p>以降はまた来週</p>
-<h2 id="Using-Spot-Instances-with-EKS-所要時間：分"><a href="#Using-Spot-Instances-with-EKS-所要時間：分" class="headerlink" title="Using Spot Instances with EKS(所要時間：分)"></a>Using Spot Instances with EKS(所要時間：分)</h2><h2 id="CI-CD-with-CodePipeline-所要時間：分"><a href="#CI-CD-with-CodePipeline-所要時間：分" class="headerlink" title="CI/CD with CodePipeline(所要時間：分)"></a>CI/CD with CodePipeline(所要時間：分)</h2><h2 id="Deploying-Jenkins-所要時間：分"><a href="#Deploying-Jenkins-所要時間：分" class="headerlink" title="Deploying Jenkins(所要時間：分)"></a>Deploying Jenkins(所要時間：分)</h2><h2 id="Tracing-with-X-Ray-所要時間：分"><a href="#Tracing-with-X-Ray-所要時間：分" class="headerlink" title="Tracing with X-Ray(所要時間：分)"></a>Tracing with X-Ray(所要時間：分)</h2><h2 id="Batch-Processing-with-Argo-所要時間：分"><a href="#Batch-Processing-with-Argo-所要時間：分" class="headerlink" title="Batch Processing with Argo(所要時間：分)"></a>Batch Processing with Argo(所要時間：分)</h2><h2 id="Securing-Your-Cluster-with-Network-Policies-所要時間：分"><a href="#Securing-Your-Cluster-with-Network-Policies-所要時間：分" class="headerlink" title="Securing Your Cluster with Network Policies(所要時間：分)"></a>Securing Your Cluster with Network Policies(所要時間：分)</h2><h2 id="Logging-with-Elasticsearch-Fluentd-and-Kibana-EFK-所要時間：分"><a href="#Logging-with-Elasticsearch-Fluentd-and-Kibana-EFK-所要時間：分" class="headerlink" title="Logging with Elasticsearch, Fluentd, and Kibana(EFK)(所要時間：分)"></a>Logging with Elasticsearch, Fluentd, and Kibana(EFK)(所要時間：分)</h2><h2 id="Monitoring-using-Prometheus-and-Grafana-所要時間：分"><a href="#Monitoring-using-Prometheus-and-Grafana-所要時間：分" class="headerlink" title="Monitoring using Prometheus and Grafana(所要時間：分)"></a>Monitoring using Prometheus and Grafana(所要時間：分)</h2><h2 id="Service-Mesh-with-Istio-所要時間：分"><a href="#Service-Mesh-with-Istio-所要時間：分" class="headerlink" title="Service Mesh with Istio(所要時間：分)"></a>Service Mesh with Istio(所要時間：分)</h2><h2 id="Assigning-Pods-to-Nodes-所要時間：分"><a href="#Assigning-Pods-to-Nodes-所要時間：分" class="headerlink" title="Assigning Pods to Nodes(所要時間：分)"></a>Assigning Pods to Nodes(所要時間：分)</h2><h2 id="Service-Mesh-with-App-Mesh-所要時間：分"><a href="#Service-Mesh-with-App-Mesh-所要時間：分" class="headerlink" title="Service Mesh with App Mesh(所要時間：分)"></a>Service Mesh with App Mesh(所要時間：分)</h2><h2 id="Exposing-a-Service-所要時間：分"><a href="#Exposing-a-Service-所要時間：分" class="headerlink" title="Exposing a Service(所要時間：分)"></a>Exposing a Service(所要時間：分)</h2><h2 id="Advanced-VPC-Networking-with-EKS-所要時間：分"><a href="#Advanced-VPC-Networking-with-EKS-所要時間：分" class="headerlink" title="Advanced VPC Networking with EKS(所要時間：分)"></a>Advanced VPC Networking with EKS(所要時間：分)</h2><h2 id="Stateful-containers-using-StatefulSets-所要時間：分"><a href="#Stateful-containers-using-StatefulSets-所要時間：分" class="headerlink" title="Stateful containers using StatefulSets(所要時間：分)"></a>Stateful containers using StatefulSets(所要時間：分)</h2><h2 id="Custom-Resource-Definition-所要時間：分"><a href="#Custom-Resource-Definition-所要時間：分" class="headerlink" title="Custom Resource Definition(所要時間：分)"></a>Custom Resource Definition(所要時間：分)</h2><h2 id="Cleanup-所要時間：分"><a href="#Cleanup-所要時間：分" class="headerlink" title="Cleanup(所要時間：分)"></a>Cleanup(所要時間：分)</h2><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2>
+        <p>EKS workshopというものがあるので、やってみました。(続き)<br><a href="https://eksworkshop.com/" target="_blank" rel="noopener">https://eksworkshop.com/</a></p>
+<h2 id="Using-Spot-Instances-with-EKS-所要時間：30分"><a href="#Using-Spot-Instances-with-EKS-所要時間：30分" class="headerlink" title="Using Spot Instances with EKS(所要時間：30分)"></a>Using Spot Instances with EKS(所要時間：30分)</h2><p>タイトルの通り。Cfn使ってEKS最適化AMIをクラスターに加えてる。Cfn使ってるので楽だけど、ふーんって感じ。<br>ここでTaintsという新しい単語が出てきた。<br><a href="https://qiita.com/sheepland/items/8fedae15e157c102757f" target="_blank" rel="noopener">https://qiita.com/sheepland/items/8fedae15e157c102757f</a><br>あとはSpotが終了してしまうときのpod再配置や、podをどのノードに優先的に配置するかなどの戦略についても。</p>
+<h2 id="CI-CD-with-CodePipeline-所要時間：30分"><a href="#CI-CD-with-CodePipeline-所要時間：30分" class="headerlink" title="CI/CD with CodePipeline(所要時間：30分)"></a>CI/CD with CodePipeline(所要時間：30分)</h2><p>こちらもタイトルの通り。Cfn使ってCodePipeline(GitHub連携からのCodeBuild使ってECRにプッシュ→デプロイ)を作成。</p>
+<h2 id="Deploying-Jenkins-所要時間：分"><a href="#Deploying-Jenkins-所要時間：分" class="headerlink" title="Deploying Jenkins(所要時間：分)"></a>Deploying Jenkins(所要時間：分)</h2><h2 id="Tracing-with-X-Ray-所要時間：分"><a href="#Tracing-with-X-Ray-所要時間：分" class="headerlink" title="Tracing with X-Ray(所要時間：分)"></a>Tracing with X-Ray(所要時間：分)</h2><h2 id="Batch-Processing-with-Argo-所要時間：分"><a href="#Batch-Processing-with-Argo-所要時間：分" class="headerlink" title="Batch Processing with Argo(所要時間：分)"></a>Batch Processing with Argo(所要時間：分)</h2><h2 id="Securing-Your-Cluster-with-Network-Policies-所要時間：分"><a href="#Securing-Your-Cluster-with-Network-Policies-所要時間：分" class="headerlink" title="Securing Your Cluster with Network Policies(所要時間：分)"></a>Securing Your Cluster with Network Policies(所要時間：分)</h2><h2 id="Logging-with-Elasticsearch-Fluentd-and-Kibana-EFK-所要時間：分"><a href="#Logging-with-Elasticsearch-Fluentd-and-Kibana-EFK-所要時間：分" class="headerlink" title="Logging with Elasticsearch, Fluentd, and Kibana(EFK)(所要時間：分)"></a>Logging with Elasticsearch, Fluentd, and Kibana(EFK)(所要時間：分)</h2><h2 id="Monitoring-using-Prometheus-and-Grafana-所要時間：分"><a href="#Monitoring-using-Prometheus-and-Grafana-所要時間：分" class="headerlink" title="Monitoring using Prometheus and Grafana(所要時間：分)"></a>Monitoring using Prometheus and Grafana(所要時間：分)</h2><h2 id="Service-Mesh-with-Istio-所要時間：分"><a href="#Service-Mesh-with-Istio-所要時間：分" class="headerlink" title="Service Mesh with Istio(所要時間：分)"></a>Service Mesh with Istio(所要時間：分)</h2><h2 id="Assigning-Pods-to-Nodes-所要時間：分"><a href="#Assigning-Pods-to-Nodes-所要時間：分" class="headerlink" title="Assigning Pods to Nodes(所要時間：分)"></a>Assigning Pods to Nodes(所要時間：分)</h2><h2 id="Service-Mesh-with-App-Mesh-所要時間：分"><a href="#Service-Mesh-with-App-Mesh-所要時間：分" class="headerlink" title="Service Mesh with App Mesh(所要時間：分)"></a>Service Mesh with App Mesh(所要時間：分)</h2><h2 id="Exposing-a-Service-所要時間：分"><a href="#Exposing-a-Service-所要時間：分" class="headerlink" title="Exposing a Service(所要時間：分)"></a>Exposing a Service(所要時間：分)</h2><h2 id="Advanced-VPC-Networking-with-EKS-所要時間：分"><a href="#Advanced-VPC-Networking-with-EKS-所要時間：分" class="headerlink" title="Advanced VPC Networking with EKS(所要時間：分)"></a>Advanced VPC Networking with EKS(所要時間：分)</h2><h2 id="Stateful-containers-using-StatefulSets-所要時間：分"><a href="#Stateful-containers-using-StatefulSets-所要時間：分" class="headerlink" title="Stateful containers using StatefulSets(所要時間：分)"></a>Stateful containers using StatefulSets(所要時間：分)</h2><h2 id="Custom-Resource-Definition-所要時間：分"><a href="#Custom-Resource-Definition-所要時間：分" class="headerlink" title="Custom Resource Definition(所要時間：分)"></a>Custom Resource Definition(所要時間：分)</h2><h2 id="Cleanup-所要時間：分"><a href="#Cleanup-所要時間：分" class="headerlink" title="Cleanup(所要時間：分)"></a>Cleanup(所要時間：分)</h2><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2>
       
     </div>
     <footer>
@@ -145,7 +117,7 @@ Start the wor">
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="https://saramune.github.io/objekumo/2019/07/08/20190708/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="https://saramune.github.io/objekumo/2019/07/17/20190717/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
