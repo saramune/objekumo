@@ -50,157 +50,6 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2019-06-11T23:45:00.000Z"><a href="/objekumo/2019/06/12/20190612/">2019-06-12</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/06/12/20190612/">RHEL7でnitro系インスタンスを使いたい</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>RHEL7でm5.largeを使いたかったのですけど</p>
-<h2 id="インスタンス立ち上げ時にインスタンスタイプが選択できない！！！"><a href="#インスタンス立ち上げ時にインスタンスタイプが選択できない！！！" class="headerlink" title="インスタンス立ち上げ時にインスタンスタイプが選択できない！！！"></a>インスタンス立ち上げ時にインスタンスタイプが選択できない！！！</h2><p>AWSが用意してくれてるAMIではnitro系で必要なドライバーのオプションが有効になっていないので、即起動はできないようです。なので一旦m4系で起動して、諸々設定して、AMIとるか、インスタンスタイプを変えるといいみたいです。RHEL8では即選べるみたい。<br>参考：<a href="https://qiita.com/wokamoto/items/5eb7458268ea5026627a" target="_blank" rel="noopener">https://qiita.com/wokamoto/items/5eb7458268ea5026627a</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-06-10T23:45:00.000Z"><a href="/objekumo/2019/06/11/20190611/">2019-06-11</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/06/11/20190611/">Route53のプライベートDNSで特定ドメインのみ外部DNSを使わないようにする</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="どゆこと"><a href="#どゆこと" class="headerlink" title="どゆこと"></a>どゆこと</h2><p>たとえば、<code>example.com</code>というドメインを管理していて、外部からはRoute53を使って<code>site1.example.com</code>とか<code>site2.example.com</code>とかにアクセスをする。そいつらはWAFを指しており、WAFからELBを指すようになっている。ただ、<code>site3.example.com</code>は中のサーバからアクセスをし、かつWAFを経由させずにELBに向けたい。</p>
-<p>というときは、プライベートDNSで<code>site3.example.com</code>を作ってやればいい。<code>example.com</code>で作っちゃうと他のも影響を受けてしまうので。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-06-09T23:45:00.000Z"><a href="/objekumo/2019/06/10/20190610/">2019-06-10</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/06/10/20190610/">CloudNative Kansai#3でLTしました。</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Docker Meetup Kansaiでも話した内容ですが、みんな勉強会とかしようよって話でLTしました。もっと喋り慣れが必要だなぁと思いましたまる。<br><a href="https://www.slideshare.net/ssuserb283b5/ss-149062453" target="_blank" rel="noopener">https://www.slideshare.net/ssuserb283b5/ss-149062453</a><br>今はまだコンテナは趣味って感じですね。仕事にしたかったら転職するしかないけどまだそのつもりはないので。。。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-06-05T23:45:00.000Z"><a href="/objekumo/2019/06/06/20190606/">2019-06-06</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/06/06/20190606/">それキャッシュじゃね？(API Gateway)</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>API Gatewayいっつもハマる</p>
-<h2 id="CloudFront-API-Gateway-Lambda"><a href="#CloudFront-API-Gateway-Lambda" class="headerlink" title="CloudFront + API Gateway + Lambda"></a>CloudFront + API Gateway + Lambda</h2><p>よくある構成なサーバレスのWebアプリ。LambdaでSSRするタイプ。</p>
-<ul>
-<li>API Gatewayでやること<ul>
-<li>デプロイ（！）</li>
-<li>使用量プランとのヒモ付とAPIキーの発行</li>
-</ul>
-</li>
-<li>CloudFrontでやること<ul>
-<li>オリジンの設定でx-api-keyをヘッダにつける</li>
-<li>BehaviorsではOriginヘッダを通すようにする</li>
-<li>キャッシュはなし</li>
-<li>POSTメソッド許可</li>
-<li>HTTPはHTTPSにリダイレクト</li>
-</ul>
-</li>
-</ul>
-<p>うまくいかないうまくいかないと思ったらブラウザのキャッシュのせいでした。CloudFront系の確認は都度シークレットウインドウでやりましょう。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2019-06-04T23:45:00.000Z"><a href="/objekumo/2019/06/05/20190605/">2019-06-05</a></time>
       
       
@@ -438,6 +287,165 @@
 
 
 
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-05-20T23:45:00.000Z"><a href="/objekumo/2019/05/21/20190521/">2019-05-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/05/21/20190521/">CloudFrontとELBでSSLするときの502エラー</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>CloudFront(SSLあり) + ELB(SSLあり)な環境で、ときどきCloudFrontが502を返す現象が発生。</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>CloudFrontのDNS(xxxx.cloudfront.net)に直接アクセスがきていた。アクセス元はbot。</p>
+<ul>
+<li>xxxx.cloudfront.net/robots.txtにアクセスがくる</li>
+<li>CloudFrontがELBにリクエストを送る</li>
+<li>SSL証明書で登録してあるドメイン名と異なるので認証エラーとなる</li>
+</ul>
+<p>っちゅーことでした。エラー自体は正しいけれど、WAFとかで防ぐしかないのかなぁ。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-05-09T23:45:00.000Z"><a href="/objekumo/2019/05/10/20190510/">2019-05-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/05/10/20190510/">boto + python2.7環境でS3へのSigV4アクセス</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>S3へのSigV2アクセスが終わっちゃいますね。<br><a href="https://dev.classmethod.jp/cloud/aws/s3-sigv2-abolition/" target="_blank" rel="noopener">https://dev.classmethod.jp/cloud/aws/s3-sigv2-abolition/</a><br>boto(not boto3)を使っている環境でSigV4になるように修正しました。</p>
+<h2 id="1-botoのバージョンを最新にする"><a href="#1-botoのバージョンを最新にする" class="headerlink" title="1. botoのバージョンを最新にする"></a>1. botoのバージョンを最新にする</h2><p>pipで最新版をインストールしましょう。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install boto</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-etc-boto-cfgを書く"><a href="#2-etc-boto-cfgを書く" class="headerlink" title="2. /etc/boto.cfgを書く"></a>2. /etc/boto.cfgを書く</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[s3] use-sigv4 = True</span><br></pre></td></tr></table></figure>
+<p>基本はこれでOK。ただ、一部メソッドは明示的に書き換える必要があるようで、具体的にはS3Connectionを使ってると以下のようなエラーが出ます。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">boto.s3.connection.HostRequiredError: BotoClientError: When using SigV4,</span><br><span class="line">you must specify a &apos;host&apos; parameter.</span><br></pre></td></tr></table></figure>
+<p>なので明示的にhostを書いてあげます。リージョンは合わせたほうがよいかも？（よくわかってない</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S3Connection(host=&apos;s3-ap-northeast-1.amazonaws.com&apos;)</span><br></pre></td></tr></table></figure>
+<p>とりあえずできたっぽいのでよし。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-05-07T23:45:00.000Z"><a href="/objekumo/2019/05/08/20190508/">2019-05-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/05/08/20190508/">CloudFrontのエラーキャッシュ</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>S3 + CloudFrontな静的Webサイトで、CloudFrontの5xxエラー率が上昇。</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>CloudFrontのアクセスログを出していたので確認。推測だけど、</p>
+<ul>
+<li>/favicon.icoとか、/appleなんちゃらへのアクセスがたまたま500エラーになる<ul>
+<li>こいつらたぶん同じタイミングでどばっとアクセスされるからS3が一瞬機嫌悪かっただけで全部500になる？？？</li>
+</ul>
+</li>
+<li>CloudFrontで5xxエラーとしてキャッシュされる</li>
+<li>CloudFrontのエラーキャッシュはデフォルト5分なので、5分間同アクセスがエラーになる</li>
+<li>iphoneからとかのアクセスが多かったら/appleなんちゃらへのアクセスも必然的に多くなるのでエラー率が上昇する</li>
+</ul>
+<p>ということかな、と。解決策としてはCloudFrontのエラーキャッシュ時間を短くすることくらいか。S3に配置してる静的ページなのでそれで問題ないと思われる。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-05-06T23:45:00.000Z"><a href="/objekumo/2019/05/07/20190507/">2019-05-07</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/05/07/20190507/">SQSをVPC Endpointから使うときにハマった話</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>VPC Endpointを使うとセキュアだったりAWS内部で通信が完結したりいいことずくめです。最近SQSをVPC内のLambdaから利用することがあったときにハマったメモです。</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>SQSのVPC Endpointを利用するときは、<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client = boto3.client(<span class="string">'sqs'</span>, endpoint=<span class="string">'エンドポイントのDNS'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>こんな感じでエンドポイント名を明示的に指定しないとダメ。エンドポイントのDNSというところは、作っておいたSQSのVPCエンドポイント見に行ったら書いてある。ゾーンごとにDNS切られてたり、東京リージョンの場合はsqs.ap-northeast-1.amazonaws.comでたぶんどのゾーンからもアクセスができる(と思われる)。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
 
 <nav id="pagination">
   
@@ -467,101 +475,43 @@
   
     <li><a href="/objekumo/tags/API-Gateway/">API Gateway</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/AWS/">AWS</a><small>25</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-API-Gateway/">AWS, API Gateway</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-Classic-VPN/">AWS, Classic VPN</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-CloudFront/">AWS, CloudFront</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-CloudFront-ELB/">AWS, CloudFront, ELB</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-CloudHSM-資格試験/">AWS, CloudHSM, 資格試験</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-EBS-資格試験/">AWS, EBS, 資格試験</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-EC2-RHEL7/">AWS, EC2, RHEL7</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-EKS/">AWS, EKS</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-Route53/">AWS, Route53</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-S3/">AWS, S3</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-SQS/">AWS, SQS</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-SSM-Systems-Manager/">AWS, SSM, Systems Manager</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-Snowball-Direct-Connect-S3-資格試験/">AWS, Snowball, Direct Connect, S3, 資格試験</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-WorkSpaces/">AWS, WorkSpaces</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-k3s-勉強会/">AWS, k3s, 勉強会</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-nginx-ALB-ELB/">AWS, nginx, ALB, ELB</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-勉強会/">AWS, 勉強会</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-負荷試験/">AWS, 負荷試験</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-資格試験/">AWS, 資格試験</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-資格試験-S3/">AWS, 資格試験, S3</a><small>0</small></li>
+    <li><a href="/objekumo/tags/AWS/">AWS</a><small>17</small></li>
   
     <li><a href="/objekumo/tags/Classic-VPN/">Classic VPN</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/CloudFront/">CloudFront</a><small>2</small></li>
   
-    <li><a href="/objekumo/tags/CloudHSM/">CloudHSM</a><small>1</small></li>
-  
     <li><a href="/objekumo/tags/CloudNative/">CloudNative</a><small>1</small></li>
-  
-    <li><a href="/objekumo/tags/CloudNative-勉強会/">CloudNative, 勉強会</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/Direct-Connect/">Direct Connect</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/Docker/">Docker</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/Docker-勉強会/">Docker, 勉強会</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/EBS/">EBS</a><small>1</small></li>
-  
     <li><a href="/objekumo/tags/EC2/">EC2</a><small>1</small></li>
-  
-    <li><a href="/objekumo/tags/EKS/">EKS</a><small>2</small></li>
   
     <li><a href="/objekumo/tags/ELB/">ELB</a><small>2</small></li>
   
     <li><a href="/objekumo/tags/GCP/">GCP</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/GCP-勉強会/">GCP, 勉強会</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/Linux/">Linux</a><small>1</small></li>
-  
     <li><a href="/objekumo/tags/RHEL7/">RHEL7</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/Route53/">Route53</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/S3/">S3</a><small>3</small></li>
+    <li><a href="/objekumo/tags/S3/">S3</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/SQS/">SQS</a><small>1</small></li>
-  
-    <li><a href="/objekumo/tags/SSM/">SSM</a><small>1</small></li>
-  
-    <li><a href="/objekumo/tags/Snowball/">Snowball</a><small>1</small></li>
-  
-    <li><a href="/objekumo/tags/WorkSpaces/">WorkSpaces</a><small>2</small></li>
   
     <li><a href="/objekumo/tags/k3s/">k3s</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/nginx/">nginx</a><small>1</small></li>
   
+    <li><a href="/objekumo/tags/ファイアーエムブレム風花雪月/">ファイアーエムブレム風花雪月</a><small>1</small></li>
+  
     <li><a href="/objekumo/tags/勉強会/">勉強会</a><small>6</small></li>
+  
+    <li><a href="/objekumo/tags/試験/">試験</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/負荷試験/">負荷試験</a><small>3</small></li>
   
-    <li><a href="/objekumo/tags/資格試験/">資格試験</a><small>5</small></li>
+    <li><a href="/objekumo/tags/資格試験/">資格試験</a><small>1</small></li>
   
   </ul>
 </div>
