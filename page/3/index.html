@@ -50,6 +50,41 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-05-06T23:45:00.000Z"><a href="/objekumo/2019/05/07/20190507/">2019-05-07</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/05/07/20190507/">SQSをVPC Endpointから使うときにハマった話</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>VPC Endpointを使うとセキュアだったりAWS内部で通信が完結したりいいことずくめです。最近SQSをVPC内のLambdaから利用することがあったときにハマったメモです。</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>SQSのVPC Endpointを利用するときは、<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client = boto3.client(<span class="string">'sqs'</span>, endpoint=<span class="string">'エンドポイントのDNS'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>こんな感じでエンドポイント名を明示的に指定しないとダメ。エンドポイントのDNSというところは、作っておいたSQSのVPCエンドポイント見に行ったら書いてある。ゾーンごとにDNS切られてたり、東京リージョンの場合はsqs.ap-northeast-1.amazonaws.comでたぶんどのゾーンからもアクセスができる(と思われる)。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-02-24T08:10:41.350Z"><a href="/objekumo/2019/02/24/jawsdays2019/">2019-02-24</a></time>
       
       
@@ -559,6 +594,8 @@
   
     <li><a href="/objekumo/tags/Classic-VPN/">Classic VPN</a><small>1</small></li>
   
+    <li><a href="/objekumo/tags/Cloud-Run/">Cloud Run</a><small>1</small></li>
+  
     <li><a href="/objekumo/tags/CloudFront/">CloudFront</a><small>2</small></li>
   
     <li><a href="/objekumo/tags/CloudNative/">CloudNative</a><small>1</small></li>
@@ -569,7 +606,9 @@
   
     <li><a href="/objekumo/tags/ELB/">ELB</a><small>2</small></li>
   
-    <li><a href="/objekumo/tags/GCP/">GCP</a><small>1</small></li>
+    <li><a href="/objekumo/tags/GCP/">GCP</a><small>2</small></li>
+  
+    <li><a href="/objekumo/tags/Knative/">Knative</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/RHEL7/">RHEL7</a><small>1</small></li>
   
@@ -601,7 +640,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2019 saramune
+  &copy; 2020 saramune
   
 </div>
 <div class="clearfix"></div></footer>

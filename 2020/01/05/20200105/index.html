@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Cloud RunはKnativeをどこまでマネージしてくれているのか | おぶじぇくも</title>
+  <meta name="author" content="saramune">
+  
+  <meta name="description" content="Cloud RunかわいいよCloud Runコンテナアプリ作っておけば「どこかで動いているKubernetes上」でそれを動かすことのできるサーバレスコンテナ環境、Cloud Run。Webアプリコンテナだったら独自ドメインも使えるし、Lets Encryptですけど自動で証明書もあててくれるし、">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Cloud RunはKnativeをどこまでマネージしてくれているのか">
+  <meta property="og:site_name" content="おぶじぇくも">
+
+  
+    <meta property="og:image" content="">
+  
+
+  <link href="/objekumo/favicon.png" rel="icon">
+  <link rel="alternate" href="/objekumo/atom.xml" title="おぶじぇくも" type="application/atom+xml">
+  <link rel="stylesheet" href="/objekumo/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+</html>
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/objekumo/">おぶじぇくも</a></h1>
+  <h2><a href="/objekumo/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/objekumo/">Home</a></li>
+    
+      <li><a href="/objekumo/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2020-01-05T11:00:00.000Z"><a href="/objekumo/2020/01/05/20200105/">2020-01-05</a></time>
+      
+      
+  
+    <h1 class="title">Cloud RunはKnativeをどこまでマネージしてくれているのか</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="Cloud-RunかわいいよCloud-Run"><a href="#Cloud-RunかわいいよCloud-Run" class="headerlink" title="Cloud RunかわいいよCloud Run"></a>Cloud RunかわいいよCloud Run</h2><p>コンテナアプリ作っておけば「どこかで動いているKubernetes上」で<br>それを動かすことのできるサーバレスコンテナ環境、Cloud Run。<br>Webアプリコンテナだったら独自ドメインも使えるし、<br>Lets Encryptですけど自動で証明書もあててくれるし、いい感じです。<br>Cloud Runは正確には「どこかのKubernetes上で動いているKnative環境」で、<br>GCPがそれらの面倒を見てくれている（マネージドなKnative）わけですので、<br>Cloud Runを理解するためには、Knativeを理解する必要があります。<br>GAになったとはいえ、Cloud RunはKnativeの機能の一部しか利用できないため<br>今どこまでマネージドにできていて今後何ができそうなのか、というところを見ていきます。<br>また、一旦Knativeの構成要素のうち、「Serving」にフォーカスします。<br>Cloud Runも今はServingしか提供してないですし。</p>
+<h2 id="Knativeって？"><a href="#Knativeって？" class="headerlink" title="Knativeって？"></a>Knativeって？</h2><p>ということで、Cloud Runを理解すると書きつつ、<br>ここからはKnativeを理解していきます。<br>概念や構築、基本的な機能は以下のハンズオンが参考になりますので端折ります。<br><a href="https://github.com/toshi0607/build-your-own-platform-with-knative" target="_blank" rel="noopener">https://github.com/toshi0607/build-your-own-platform-with-knative</a><br>公式はこちら。<br><a href="https://knative.dev/" target="_blank" rel="noopener">https://knative.dev/</a></p>
+<h2 id="Cloud-Runの機能とKnativeの機能の対応"><a href="#Cloud-Runの機能とKnativeの機能の対応" class="headerlink" title="Cloud Runの機能とKnativeの機能の対応"></a>Cloud Runの機能とKnativeの機能の対応</h2><p>ここからはCloud Runに現在ある機能（設定）が<br>Knativeのどの機能（設定）に対応しているのか、について確認します。<br>Cloud Runのサービス作成時の入力項目をベースに見ていきます。</p>
+<h3 id="認証"><a href="#認証" class="headerlink" title="認証"></a>認証</h3><p>外部からアクセス可能か否か。<br>KnativeのServingはデフォルトで外にオープンなので<br>内部向けにするには設定を入れる必要があります。<br><a href="https://knative.dev/docs/serving/cluster-local-route/" target="_blank" rel="noopener">https://knative.dev/docs/serving/cluster-local-route/</a><br>これを切り替えてくれてるんですね。<br>ちなみに実際に上記ドキュメントどおりにKnativeでやろうと思ったら<br>svc名.ns名.svc.cluster.localでkube-dnsがひいてくれない。。。<br><a href="https://medium.com/google-cloud/cluster-local-issue-with-knative-eventing-v0-9-0-a1fee2215cfe" target="_blank" rel="noopener">https://medium.com/google-cloud/cluster-local-issue-with-knative-eventing-v0-9-0-a1fee2215cfe</a><br>ググってこれで解決。内部用のgatewayが必要なのかしら。（よく読んでない</p>
+<h3 id="リクエスト数"><a href="#リクエスト数" class="headerlink" title="リクエスト数"></a>リクエスト数</h3><p>RevisionリソースのcontainerConcurrencyの値っぽい。</p>
+<h3 id="タイムアウト"><a href="#タイムアウト" class="headerlink" title="タイムアウト"></a>タイムアウト</h3><p>RevisionリソースのtimeoutSecondsの値っぽい。</p>
+<h3 id="コンテナポート"><a href="#コンテナポート" class="headerlink" title="コンテナポート"></a>コンテナポート</h3><p>Cloud Runのサービスを作成するとhttpsのエンドポイントが生成されます。<br>なので基本http443(or 80)で外部からの通信を待ち受けます。<br>コンテナポートは、エンドポイントにアクセスがきたらどのポートでアプリ側のコンテナに渡すか、という設定になります。<br>たとえばWebアプリコンテナで8080で待ち受けてる、とかであればそのポートを設定することになります。<br>実際のKnative環境でも、Servingを作成するとデフォルトでhttp80で待ち受けるエンドポイントが作成されます。<br>これがKnativeのどこで設定されてるかちょっとわからなかったのでまた調べる。</p>
+<h3 id="自動スケーリング"><a href="#自動スケーリング" class="headerlink" title="自動スケーリング"></a>自動スケーリング</h3><p>これ<br><a href="https://knative.dev/docs/serving/configuring-autoscaling/" target="_blank" rel="noopener">https://knative.dev/docs/serving/configuring-autoscaling/</a></p>
+<h3 id="Cloud-SQL接続"><a href="#Cloud-SQL接続" class="headerlink" title="Cloud SQL接続"></a>Cloud SQL接続</h3><p>使ってないので一旦置き</p>
+<h3 id="サービスのドメイン"><a href="#サービスのドメイン" class="headerlink" title="サービスのドメイン"></a>サービスのドメイン</h3><p>Cloud Runで作ったアプリには[サービス名]-[識別子？].a.run.appっていうドメインが割り当てられる。<br>KnativeのConfig Mapでドメインを変更できるので、そこで設定しているのでしょう。<br><a href="https://knative.dev/docs/serving/using-a-custom-domain/" target="_blank" rel="noopener">https://knative.dev/docs/serving/using-a-custom-domain/</a></p>
+<h3 id="カスタムドメイン-amp-SSL化"><a href="#カスタムドメイン-amp-SSL化" class="headerlink" title="カスタムドメイン&amp;SSL化"></a>カスタムドメイン&amp;SSL化</h3><p>カスタムドメインも同様に、設定時はサービスとドメインを入力するので<br>その情報をもってConfig Mapを更新していると思われる。<br>カスタムドメインの設定と同時にLets Encryptによる自動更新の証明書が<br>当てられていると思われる。<br><a href="https://knative.dev/docs/serving/using-auto-tls/" target="_blank" rel="noopener">https://knative.dev/docs/serving/using-auto-tls/</a></p>
+<h2 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h2><p>ざっと見た感じ、KnativeにあってCloud RunにないServingの機能って<br>Observabilityのところと、Routingの細かい制御くらいなのでは？<br>と思いました。（Knativeのドキュメントベースで）<br><a href="https://knative.dev/docs/serving/" target="_blank" rel="noopener">https://knative.dev/docs/serving/</a><br>Routingできれば、Canaryリリースとかできるようになってひとまずだいたいいい感じになりそう。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/objekumo/tags/GCP/">GCP</a>, <a href="/objekumo/tags/Cloud-Run/">Cloud Run</a>, <a href="/objekumo/tags/Knative/">Knative</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://saramune.github.io/objekumo/2020/01/05/20200105/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:saramune.github.io/objekumo">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/objekumo/tags/ALB/">ALB</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/API-Gateway/">API Gateway</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/AWS/">AWS</a><small>17</small></li>
+  
+    <li><a href="/objekumo/tags/Classic-VPN/">Classic VPN</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/Cloud-Run/">Cloud Run</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/CloudFront/">CloudFront</a><small>2</small></li>
+  
+    <li><a href="/objekumo/tags/CloudNative/">CloudNative</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/Docker/">Docker</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/EC2/">EC2</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/ELB/">ELB</a><small>2</small></li>
+  
+    <li><a href="/objekumo/tags/GCP/">GCP</a><small>2</small></li>
+  
+    <li><a href="/objekumo/tags/Knative/">Knative</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/RHEL7/">RHEL7</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/Route53/">Route53</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/S3/">S3</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/SQS/">SQS</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/k3s/">k3s</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/nginx/">nginx</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/ファイアーエムブレム風花雪月/">ファイアーエムブレム風花雪月</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/勉強会/">勉強会</a><small>6</small></li>
+  
+    <li><a href="/objekumo/tags/試験/">試験</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/負荷試験/">負荷試験</a><small>3</small></li>
+  
+    <li><a href="/objekumo/tags/資格試験/">資格試験</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2020 saramune
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/objekumo/js/jquery.imagesloaded.min.js"></script>
+<script src="/objekumo/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/objekumo/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/objekumo/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
