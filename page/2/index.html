@@ -50,6 +50,39 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-06-09T23:45:00.000Z"><a href="/objekumo/2019/06/10/20190610/">2019-06-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/06/10/20190610/">CloudNative Kansai#3でLTしました。</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Docker Meetup Kansaiでも話した内容ですが、みんな勉強会とかしようよって話でLTしました。もっと喋り慣れが必要だなぁと思いましたまる。<br><a href="https://www.slideshare.net/ssuserb283b5/ss-149062453" target="_blank" rel="noopener">https://www.slideshare.net/ssuserb283b5/ss-149062453</a><br>今はまだコンテナは趣味って感じですね。仕事にしたかったら転職するしかないけどまだそのつもりはないので。。。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-06-05T23:45:00.000Z"><a href="/objekumo/2019/06/06/20190606/">2019-06-06</a></time>
       
       
@@ -417,50 +450,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-05-07T23:45:00.000Z"><a href="/objekumo/2019/05/08/20190508/">2019-05-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/05/08/20190508/">CloudFrontのエラーキャッシュ</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>S3 + CloudFrontな静的Webサイトで、CloudFrontの5xxエラー率が上昇。</p>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>CloudFrontのアクセスログを出していたので確認。推測だけど、</p>
-<ul>
-<li>/favicon.icoとか、/appleなんちゃらへのアクセスがたまたま500エラーになる<ul>
-<li>こいつらたぶん同じタイミングでどばっとアクセスされるからS3が一瞬機嫌悪かっただけで全部500になる？？？</li>
-</ul>
-</li>
-<li>CloudFrontで5xxエラーとしてキャッシュされる</li>
-<li>CloudFrontのエラーキャッシュはデフォルト5分なので、5分間同アクセスがエラーになる</li>
-<li>iphoneからとかのアクセスが多かったら/appleなんちゃらへのアクセスも必然的に多くなるのでエラー率が上昇する</li>
-</ul>
-<p>ということかな、と。解決策としてはCloudFrontのエラーキャッシュ時間を短くすることくらいか。S3に配置してる静的ページなのでそれで問題ないと思われる。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -490,7 +479,7 @@
   
     <li><a href="/objekumo/tags/API-Gateway/">API Gateway</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/AWS/">AWS</a><small>17</small></li>
+    <li><a href="/objekumo/tags/AWS/">AWS</a><small>18</small></li>
   
     <li><a href="/objekumo/tags/Classic-VPN/">Classic VPN</a><small>1</small></li>
   
@@ -507,6 +496,10 @@
     <li><a href="/objekumo/tags/ELB/">ELB</a><small>2</small></li>
   
     <li><a href="/objekumo/tags/GCP/">GCP</a><small>2</small></li>
+  
+    <li><a href="/objekumo/tags/JAWS-DAYS-2020/">JAWS DAYS 2020</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/JAWS-UG/">JAWS-UG</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/Knative/">Knative</a><small>1</small></li>
   

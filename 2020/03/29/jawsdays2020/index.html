@@ -3,18 +3,16 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>CloudFrontとELBでSSLするときの502エラー | おぶじぇくも</title>
+  <title>JAWS DAYS 2020「AWSしくじり先生」でオンライン登壇しました | おぶじぇくも</title>
   <meta name="author" content="saramune">
   
-  <meta name="description" content="CloudFront(SSLあり) + ELB(SSLあり)な環境で、ときどきCloudFrontが502を返す現象が発生。
-結論CloudFrontのDNS(xxxx.cloudfront.net)に直接アクセスがきていた。アクセス元はbot。
-
-xxxx.cloudfront.net/robot">
+  <meta name="description" content="資料はこちらhttps://speakerdeck.com/saramune/awssikuzirixian-sheng
+エンジョイ・オンライン！昨日はお疲れ様でした。初のフルオンラインということで運営のみなさまは大変なところも多々あったかと思いますが問題なく走りきったのは素晴らしいです！そしてそこ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="CloudFrontとELBでSSLするときの502エラー">
+  <meta property="og:title" content="JAWS DAYS 2020「AWSしくじり先生」でオンライン登壇しました">
   <meta property="og:site_name" content="おぶじぇくも">
 
   
@@ -54,24 +52,20 @@ xxxx.cloudfront.net/robot">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2019-05-20T23:45:00.000Z"><a href="/objekumo/2019/05/21/20190521/">2019-05-21</a></time>
+        <time datetime="2020-03-29T01:00:00.000Z"><a href="/objekumo/2020/03/29/jawsdays2020/">2020-03-29</a></time>
       
       
   
-    <h1 class="title">CloudFrontとELBでSSLするときの502エラー</h1>
+    <h1 class="title">JAWS DAYS 2020「AWSしくじり先生」でオンライン登壇しました</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>CloudFront(SSLあり) + ELB(SSLあり)な環境で、ときどきCloudFrontが502を返す現象が発生。</p>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>CloudFrontのDNS(xxxx.cloudfront.net)に直接アクセスがきていた。アクセス元はbot。</p>
-<ul>
-<li>xxxx.cloudfront.net/robots.txtにアクセスがくる</li>
-<li>CloudFrontがELBにリクエストを送る</li>
-<li>SSL証明書で登録してあるドメイン名と異なるので認証エラーとなる</li>
-</ul>
-<p>っちゅーことでした。エラー自体は正しいけれど、WAFとかで防ぐしかないのかなぁ。</p>
+        <h2 id="資料はこちら"><a href="#資料はこちら" class="headerlink" title="資料はこちら"></a>資料はこちら</h2><p><a href="https://speakerdeck.com/saramune/awssikuzirixian-sheng" target="_blank" rel="noopener">https://speakerdeck.com/saramune/awssikuzirixian-sheng</a></p>
+<h2 id="エンジョイ・オンライン！"><a href="#エンジョイ・オンライン！" class="headerlink" title="エンジョイ・オンライン！"></a>エンジョイ・オンライン！</h2><p>昨日はお疲れ様でした。初のフルオンラインということで<br>運営のみなさまは大変なところも多々あったかと思いますが<br>問題なく走りきったのは素晴らしいです！<br>そしてそこで登壇というある意味貴重な機会をいただけ感謝です。</p>
+<h2 id="JAWS-DAYSとわたし"><a href="#JAWS-DAYSとわたし" class="headerlink" title="JAWS DAYSとわたし"></a>JAWS DAYSとわたし</h2><p>2018は一般参加でした。ちょうどその年からJAWS-UGのイベントに顔を出し<br>本格的にAWSとイチャイチャすることを決めた年でした。<br>2019はスタッフ参加でした。お祭りを盛り上げるためにお手伝い。<br>これも初めての経験でしたが、楽しかったです。<br>そして2020は登壇。25分枠でしたが初めてにしちゃぁ<br>Twitterとか見る限り皆さんの気付きになってもらえたかと思います。<br>みんなもっと失敗事例共有しようよー。</p>
+<h2 id="これから"><a href="#これから" class="headerlink" title="これから"></a>これから</h2><p>今回をまた一つのアウトプット・成功体験として<br>これからも継続的に登壇とかやっていきます。<br>ネタも（失敗事例以外でも）増やしていけるようにしないと。</p>
 
       
     </div>
@@ -81,7 +75,7 @@ xxxx.cloudfront.net/robot">
         
   
   <div class="tags">
-    <a href="/objekumo/tags/AWS/">AWS</a>, <a href="/objekumo/tags/CloudFront/">CloudFront</a>, <a href="/objekumo/tags/ELB/">ELB</a>
+    <a href="/objekumo/tags/AWS/">AWS</a>, <a href="/objekumo/tags/JAWS-UG/">JAWS-UG</a>, <a href="/objekumo/tags/JAWS-DAYS-2020/">JAWS DAYS 2020</a>
   </div>
 
         
@@ -124,7 +118,7 @@ xxxx.cloudfront.net/robot">
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="https://saramune.github.io/objekumo/2019/05/21/20190521/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="https://saramune.github.io/objekumo/2020/03/29/jawsdays2020/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
