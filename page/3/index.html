@@ -50,6 +50,46 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-05-09T23:45:00.000Z"><a href="/objekumo/2019/05/10/20190510/">2019-05-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/05/10/20190510/">boto + python2.7環境でS3へのSigV4アクセス</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>S3へのSigV2アクセスが終わっちゃいますね。<br><a href="https://dev.classmethod.jp/cloud/aws/s3-sigv2-abolition/" target="_blank" rel="noopener">https://dev.classmethod.jp/cloud/aws/s3-sigv2-abolition/</a><br>boto(not boto3)を使っている環境でSigV4になるように修正しました。</p>
+<h2 id="1-botoのバージョンを最新にする"><a href="#1-botoのバージョンを最新にする" class="headerlink" title="1. botoのバージョンを最新にする"></a>1. botoのバージョンを最新にする</h2><p>pipで最新版をインストールしましょう。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install boto</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-etc-boto-cfgを書く"><a href="#2-etc-boto-cfgを書く" class="headerlink" title="2. /etc/boto.cfgを書く"></a>2. /etc/boto.cfgを書く</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[s3] use-sigv4 = True</span><br></pre></td></tr></table></figure>
+<p>基本はこれでOK。ただ、一部メソッドは明示的に書き換える必要があるようで、具体的にはS3Connectionを使ってると以下のようなエラーが出ます。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">boto.s3.connection.HostRequiredError: BotoClientError: When using SigV4,</span><br><span class="line">you must specify a &apos;host&apos; parameter.</span><br></pre></td></tr></table></figure>
+<p>なので明示的にhostを書いてあげます。リージョンは合わせたほうがよいかも？（よくわかってない</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S3Connection(host=&apos;s3-ap-northeast-1.amazonaws.com&apos;)</span><br></pre></td></tr></table></figure>
+<p>とりあえずできたっぽいのでよし。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-05-07T23:45:00.000Z"><a href="/objekumo/2019/05/08/20190508/">2019-05-08</a></time>
       
       
@@ -648,9 +688,13 @@
   
     <li><a href="/objekumo/tags/EC2/">EC2</a><small>1</small></li>
   
+    <li><a href="/objekumo/tags/EKS/">EKS</a><small>1</small></li>
+  
     <li><a href="/objekumo/tags/ELB/">ELB</a><small>2</small></li>
   
     <li><a href="/objekumo/tags/GCP/">GCP</a><small>2</small></li>
+  
+    <li><a href="/objekumo/tags/GKE/">GKE</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/JAWS-DAYS-2020/">JAWS DAYS 2020</a><small>1</small></li>
   
@@ -669,6 +713,8 @@
     <li><a href="/objekumo/tags/k3s/">k3s</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/nginx/">nginx</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/エッジコンピューティング/">エッジコンピューティング</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/ファイアーエムブレム風花雪月/">ファイアーエムブレム風花雪月</a><small>1</small></li>
   
