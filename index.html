@@ -50,7 +50,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2020-12-11T11:00:00.000Z"><a href="/objekumo/2020/12/11/20201211/">2020-12-11</a></time>
+        <time datetime="2020-12-10T23:00:00.000Z"><a href="/objekumo/2020/12/11/20201211/">2020-12-11</a></time>
       
       
   
@@ -60,7 +60,7 @@
     </header>
     <div class="entry">
       
-        <p>Kubernetesアドベントカレンダー2020 その3、12/11分です。<br><a href="https://qiita.com/advent-calendar/2020/kubernetes3" target="_blank" rel="noopener">https://qiita.com/advent-calendar/2020/kubernetes3</a></p>
+        <p>Kubernetesアドベントカレンダー2020 その3、12/11分です。（初・アドベントカレンダー）<br><a href="https://qiita.com/advent-calendar/2020/kubernetes3" target="_blank" rel="noopener">https://qiita.com/advent-calendar/2020/kubernetes3</a></p>
 <p>Kubernetes運用したことない初心者なのでツッコミ等歓迎です。</p>
 <h2 id="これはなに？"><a href="#これはなに？" class="headerlink" title="これはなに？"></a>これはなに？</h2><p>おうちにあるラズパイなどを、GKEの一部として活用するための方法を調べてみました。</p>
 <h2 id="きっかけ"><a href="#きっかけ" class="headerlink" title="きっかけ"></a>きっかけ</h2><p>チェシャ猫さんがKube Edgeを使って、おうちEKSやってるというのがtwitterで流れてきたのを見て</p>
@@ -94,12 +94,12 @@
 <li>セキュリティ面</li>
 </ul>
 </li>
-<li>がやっぱり気になるのでセンサの近くで処理したい！</li>
+<li>がやっぱり気になるのでセンサの近くで処理できるところは処理したい！</li>
 </ul>
 <h2 id="というわけで"><a href="#というわけで" class="headerlink" title="というわけで"></a>というわけで</h2><p>エッジやマルチクラウドで一貫したk8sの体験を提供すべく、各社色々サービスを出しています。</p>
 <ul>
 <li>GCP: Anthos</li>
-<li>AWS: OpenShiftのマネージドのやつ？、EKS anywhere[new!]</li>
+<li>AWS: EKS anywhere[new!]</li>
 <li>Azure: Azure Arc(よく知らない)</li>
 </ul>
 <p>最近結構盛り上がってる分野な気がしていて、おうちGKE、おうちEKS、やっといて損はないかな、と。</p>
@@ -144,7 +144,7 @@
 </ul>
 <h3 id="2-感想"><a href="#2-感想" class="headerlink" title="2. 感想"></a>2. 感想</h3><ul>
 <li>できるけどおうちk8sクラスタはそれ自体がちょっとハードル高い…</li>
-<li>IstioベースのマルチクラスタがGCPのAnthosのベースですね</li>
+<li>IstioベースのマルチクラスタがGCPのAnthosの考え方ですね</li>
 </ul>
 <h3 id="3-Anthos-Bare-Metal"><a href="#3-Anthos-Bare-Metal" class="headerlink" title="3. Anthos Bare-Metal"></a>3. Anthos Bare-Metal</h3><p><a href="https://cloud.google.com/blog/ja/topics/hybrid-cloud/anthos-on-bare-metal-is-now-ga" target="_blank" rel="noopener">https://cloud.google.com/blog/ja/topics/hybrid-cloud/anthos-on-bare-metal-is-now-ga</a></p>
 <ul>
@@ -159,7 +159,7 @@
 <h2 id="番外編A-EKS-Anywhere"><a href="#番外編A-EKS-Anywhere" class="headerlink" title="番外編A. EKS Anywhere"></a>番外編A. EKS Anywhere</h2><p>GKEメインで見てきましたが、AWSのEKSもオンプレに伸ばすサービスがつい先日発表されました。</p>
 <p><a href="https://aws.amazon.com/jp/eks/eks-anywhere/" target="_blank" rel="noopener">https://aws.amazon.com/jp/eks/eks-anywhere/</a></p>
 <p>おうちEKSもできるかも（でもこっちもスペックまぁまぁ要りそうですねきっと。</p>
-<h2 id="番外編B-クラウドの自前k8sクラスタとおうちをつなぐ"><a href="#番外編B-クラウドの自前k8sクラスタとおうちをつなぐ" class="headerlink" title="番外編B: クラウドの自前k8sクラスタとおうちをつなぐ"></a>番外編B: クラウドの自前k8sクラスタとおうちをつなぐ</h2><p>GKEとかEKSとか、可能な限りマネージドなものを使いたいですが、それ以外でおうちのラズパイをクラウドの一部にする方法もあると思ったので、そちらも調べてみました。</p>
+<h2 id="番外編B-クラウドの自前k8sクラスタとおうちをつなぐ"><a href="#番外編B-クラウドの自前k8sクラスタとおうちをつなぐ" class="headerlink" title="番外編B: クラウドの自前k8sクラスタとおうちをつなぐ"></a>番外編B: クラウドの自前k8sクラスタとおうちをつなぐ</h2><p>GKEとかEKSとか、可能な限りマネージドなものを使いたいですし、各社サービスはそれがウリではあるものの、それ以外でおうちのラズパイをクラウドの一部にする方法もあると思ったので、そちらも調べてみました。</p>
 <h3 id="番外編B-1-てゆーかそもそもk8sのノードはマスターと同じLANになくてもよいのでは？"><a href="#番外編B-1-てゆーかそもそもk8sのノードはマスターと同じLANになくてもよいのでは？" class="headerlink" title="番外編B-1. てゆーかそもそもk8sのノードはマスターと同じLANになくてもよいのでは？"></a>番外編B-1. てゆーかそもそもk8sのノードはマスターと同じLANになくてもよいのでは？</h3><ul>
 <li>kubeadmでクラスタつくるとき、最終的にnodeからjoin！ってやってるよね</li>
 <li>マスターへの通信はインターネット経由でもいけるんちゃうん？<ul>
@@ -191,10 +191,7 @@
 </ul>
 <img src="/objekumo/2020/12/11/20201211/3-1.png">
 <h3 id="番外編B-1-感想"><a href="#番外編B-1-感想" class="headerlink" title="番外編B-1. 感想"></a>番外編B-1. 感想</h3><ul>
-<li>WANでつなぐのむずい。やっぱりVPNしとくと楽…<ul>
-<li>だからあんまり事例がないのかなぁ</li>
-</ul>
-</li>
+<li>やっぱりできる、、、けどもちろんこれだけだと実用に耐えない。。。</li>
 </ul>
 <h3 id="番外編B-2-k3s"><a href="#番外編B-2-k3s" class="headerlink" title="番外編B-2. k3s"></a>番外編B-2. k3s</h3><p><a href="https://k3s.io/" target="_blank" rel="noopener">https://k3s.io/</a></p>
 <ul>
@@ -202,11 +199,16 @@
 <li>Armでも動くIoT向け？なcertified k8s</li>
 <li>Rancherが開発→CNCF sandbox入り</li>
 </ul>
-<h3 id="番外編B-2-やって、、、ない"><a href="#番外編B-2-やって、、、ない" class="headerlink" title="番外編B-2. やって、、、ない"></a>番外編B-2. やって、、、ない</h3><p>たぶんやることは番外編1.と同じで、本質的にはk8sのディストリビューションの違いという差しかなさそうなので。。。</p>
+<h3 id="番外編B-2-やって、、、ない"><a href="#番外編B-2-やって、、、ない" class="headerlink" title="番外編B-2. やって、、、ない"></a>番外編B-2. やって、、、ない</h3><ul>
+<li>たぶんやることは番外編1.と同じで、本質的にはk8sのディストリビューションの違いという差しかなさそうなので。。。</li>
+</ul>
 <h2 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h2><ul>
 <li>クラウドのk8sクラスターをオンプレや他クラウドへ延伸するのが今アツい！（たぶん）</li>
-<li>Kube Edge等使えば、おうちのラズパイをクラウドの一部として活用できる！</li>
-<li>GKEのみならずEKSも参画したので、今後に期待！</li>
+<li>おうちのラズパイをGKEやEKSの一部として活用できる！（理論的には）</li>
+<li>各社力を入れていそうなので、今後に期待！<ul>
+<li>AWS使いとしてはECS Anywhereも気になる</li>
+</ul>
+</li>
 </ul>
 
       
