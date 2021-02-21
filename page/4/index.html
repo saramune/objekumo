@@ -50,357 +50,6 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2019-02-16T12:35:52.364Z"><a href="/objekumo/2019/02/16/ecs/">2019-02-16</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/02/16/ecs/">まめ</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>コンテナの勉強してるんでコンテナアプリ作ろうと思ってしこしこ作ってました。</p>
-<h1 id="勉強会用タグ付きツイート量産クライアント"><a href="#勉強会用タグ付きツイート量産クライアント" class="headerlink" title="勉強会用タグ付きツイート量産クライアント"></a>勉強会用タグ付きツイート量産クライアント</h1><p>鳩に豆鉄砲喰らわせる、の意で、「まめ」という名前に。</p>
-<h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><ul>
-<li>flask(python3)アプリ</li>
-<li>nginxとuwsgiの2つのコンテナをセットで利用<ul>
-<li>k8sでいうところのpodをイメージ</li>
-</ul>
-</li>
-<li>やることはTwitter連携と投稿<ul>
-<li>ただのラッパ</li>
-<li>タグを最初に指定しておけば勝手につけてくれる</li>
-</ul>
-</li>
-<li>ドメインもとった<ul>
-<li>gunofma.me</li>
-<li>豆の銃</li>
-<li>ecs.gunofma.me とか eks.gunofma.me とか</li>
-</ul>
-</li>
-</ul>
-<h2 id="進捗"><a href="#進捗" class="headerlink" title="進捗"></a>進捗</h2><ul>
-<li>とりあえずECS(Fargate)で動くところまでできた<ul>
-<li><a href="https://ecs.gunofma.me" target="_blank" rel="noopener">https://ecs.gunofma.me</a></li>
-<li>勉強会んとき以外は落とす</li>
-</ul>
-</li>
-<li>ソースはちょっとリポジトリの分け方とか決まってから…</li>
-</ul>
-<h2 id="やりたいこと"><a href="#やりたいこと" class="headerlink" title="やりたいこと"></a>やりたいこと</h2><ul>
-<li>ECS<ul>
-<li>CI/CD周り</li>
-</ul>
-</li>
-<li>EKS<ul>
-<li>EKSでの公開</li>
-<li><a href="https://eks.gunofma.me" target="_blank" rel="noopener">https://eks.gunofma.me</a></li>
-</ul>
-</li>
-<li>全般<ul>
-<li>GitOps</li>
-</ul>
-</li>
-</ul>
-<h2 id="ハマったこと"><a href="#ハマったこと" class="headerlink" title="ハマったこと"></a>ハマったこと</h2><ul>
-<li>モジュールの分け方<ul>
-<li>本当はtwitterとの通信は別コンテナにすべき？</li>
-<li>ややこしかったので今回はviewに組み込み</li>
-</ul>
-</li>
-<li>uwsgi is 何<ul>
-<li>pythonアプリのお作法的なところもあまりわかってない</li>
-<li>nginxもよく知らない</li>
-</ul>
-</li>
-<li>twitter callback urlでよく死ぬ<ul>
-<li>単純に設定間違いとか、twitter側に登録できてなかったとか</li>
-</ul>
-</li>
-</ul>
-<h2 id="よくわかってないこと"><a href="#よくわかってないこと" class="headerlink" title="よくわかってないこと"></a>よくわかってないこと</h2><ul>
-<li>セッション管理<ul>
-<li>ECSで組む場合はElastiCacheと連携したほうがいいのかなぁ</li>
-<li>今はコンテナ1つだからいいけど。ALBのStickySessionもアリ？</li>
-<li>k8sはserviceの設定でいい感じにしてくれるらしい</li>
-</ul>
-</li>
-<li>全体的なお作法<ul>
-<li>アプリのディレクトリ構成</li>
-<li>ソースリポジトリの分け方</li>
-<li>ローカルでのdocker build</li>
-<li>秘匿情報の外だしのやりかた</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-02-02T01:48:36.932Z"><a href="/objekumo/2019/02/02/helix2/">2019-02-02</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/02/02/helix2/">Helixその後</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="もげた"><a href="#もげた" class="headerlink" title="もげた"></a>もげた</h1><ul>
-<li>左手側もげました</li>
-<li>右手側に挿せばいいんじゃね</li>
-<li>キー配列が左右反転する…だと</li>
-<li>USBんとこ買い直し</li>
-<li>でもガッチリはんだづけしてるので取るのめんどい</li>
-<li>基盤からやり直すかーポチ</li>
-<li><a href="https://gist.github.com/unak/b2defbcb830c579c28276318e0e616cf" target="_blank" rel="noopener">https://gist.github.com/unak/b2defbcb830c579c28276318e0e616cf</a></li>
-<li>よくよく考えたら配列はソフトウェアで制御してんだから…</li>
-<li>基盤とUSB microが余る←いまここ</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-01-01T00:31:01.155Z"><a href="/objekumo/2019/01/01/helix/">2019-01-01</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/01/01/helix/">Helixビルドログ</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>あとhexoのテストも兼ねる</p>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><ul>
-<li>LEDなしだったらはんだ素人でもなんとかなる</li>
-<li>結構時間をとられたけどモノはよくて満足</li>
-<li>ここからが本当の沼の始まり</li>
-</ul>
-<h2 id="失敗したこと-ハマったこと"><a href="#失敗したこと-ハマったこと" class="headerlink" title="失敗したこと(ハマったこと)"></a>失敗したこと(ハマったこと)</h2><ul>
-<li>LEDの方向を間違えていてPCにつないだときに認識されなかった<ul>
-<li>間違ってたやつ全部外して解決</li>
-<li>つけ直す時間が惜しかったので左側は中途半端、右側は最初からLEDなし</li>
-</ul>
-</li>
-<li>やっぱり4行がいいかなっつって無理やり4行にしたこと<ul>
-<li>アクリル板が中途半端になった</li>
-</ul>
-</li>
-<li>機材不足(はんだ吸い取り線、やすり)</li>
-<li>ピンジャックのはんだが甘く、左右つないだときだけ片方動かなかった<ul>
-<li>片方ずつUSBに挿したら動いたのでそこから推測</li>
-</ul>
-</li>
-</ul>
-<h2 id="ビルドログ"><a href="#ビルドログ" class="headerlink" title="ビルドログ"></a>ビルドログ</h2><p>途中経過は残っていないので、これを見たら作れる！っていうサイトを紹介します。</p>
-<ul>
-<li><a href="https://github.com/MakotoKurauchi/helix/blob/master/Doc/buildguide_jp.md" target="_blank" rel="noopener">https://github.com/MakotoKurauchi/helix/blob/master/Doc/buildguide_jp.md</a><ul>
-<li>公式</li>
-</ul>
-</li>
-<li><a href="http://critical-alert.hatenablog.com/entry/2018/07/21/190204" target="_blank" rel="noopener">http://critical-alert.hatenablog.com/entry/2018/07/21/190204</a></li>
-<li><a href="https://yamaken1343.hatenablog.jp/entry/2018/06/28/221802" target="_blank" rel="noopener">https://yamaken1343.hatenablog.jp/entry/2018/06/28/221802</a></li>
-<li><a href="http://ultra-genma.hateblo.jp/entry/2018/08/19/223534" target="_blank" rel="noopener">http://ultra-genma.hateblo.jp/entry/2018/08/19/223534</a></li>
-<li><a href="https://14code.com/blog/20181010_1417/" target="_blank" rel="noopener">https://14code.com/blog/20181010_1417/</a></li>
-<li><a href="http://hanocha.hateblo.jp/entry/2018/03/24/200514" target="_blank" rel="noopener">http://hanocha.hateblo.jp/entry/2018/03/24/200514</a></li>
-</ul>
-<h2 id="さいごに"><a href="#さいごに" class="headerlink" title="さいごに"></a>さいごに</h2><p>正直新しいキーマップになれるのに大変で新年早々生産性が下がりそう。でも頑張ろう。</p>
-<p>この記事はHelixで書きました！！！</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-11-04T08:57:37.000Z"><a href="/objekumo/2018/11/04/jawsfesta2018/">2018-11-04</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2018/11/04/jawsfesta2018/">JAWS FESTA 2018</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><p>帰属することがモチベーション」を体験できた一日でした。今後も積極的に参加します。</p>
-<h1 id="タイムライン"><a href="#タイムライン" class="headerlink" title="タイムライン"></a>タイムライン</h1><ul>
-<li>07:35：家を出発（チャリで</li>
-<li>08:00：駐輪場難民になりつつ到着。搬入、会場設営のお手伝い</li>
-<li>10:30：あっという間に開会。基調講演を見て、お昼</li>
-<li>12:00：受付業務</li>
-<li>13:00：キーノート拝聴</li>
-<li>14:00：Bトラックセッションオーナー〜ブースサポート〜Aトラックセッションオーナー</li>
-<li>18:00：あっという間に閉会、写真撮影、撤収</li>
-<li>18:30：懇親会、名刺交換タイム</li>
-<li>20:30：撤収</li>
-</ul>
-<h1 id="各セッション"><a href="#各セッション" class="headerlink" title="各セッション"></a>各セッション</h1><p>今回はスタッフしてたのでつぶやきもほとんどせず。</p>
-<ul>
-<li>基調講演<ul>
-<li>JAWSUGという組織について、というか良い組織のあり方についてというか、色んな所に当てはまることだなと</li>
-</ul>
-</li>
-<li>キーノート<ul>
-<li>実はあんまり聞いてなかった…</li>
-</ul>
-</li>
-<li>JAWS-UGのご案内<ul>
-<li>山下さんより。各支部の紹介、JAWS DAYS2019のお知らせ！</li>
-</ul>
-</li>
-<li>[EKS / コンテナ] k8sを使ってリアルタイム価格予測システムを運用している話<ul>
-<li>価格予測システムの概要とk8sの使い方について</li>
-</ul>
-</li>
-<li>株式会社NTTスマイルエナジー<ul>
-<li>オフィスがgoogle的な今風</li>
-</ul>
-</li>
-<li>[MicroService] 数千イベント/sをServerless x Microserviceで捌く<ul>
-<li>Microserviceのエモいお話</li>
-<li>[<a href="https://qiita.com/hiroki_konishi/items/f22a1db93015a29cc62d:title]" target="_blank" rel="noopener">https://qiita.com/hiroki_konishi/items/f22a1db93015a29cc62d:title]</a></li>
-</ul>
-</li>
-<li>[運用 / SRE] AWS Amplify で超加速するフロント開発最前線<ul>
-<li>Amplify知らなかったけどモダンな開発を確かに加速してくれそう</li>
-</ul>
-</li>
-<li>[EKS / コンテナ] Kubernetes界隈のpassionate (熱量)伝えます<ul>
-<li>コンテナとは〜というところから界隈の事情を丁寧に解説されてました</li>
-<li>紹介されてた本読もう</li>
-</ul>
-</li>
-<li>マルチクラウドで実現するデータドリブンEコマース基盤<ul>
-<li>各クラウドのいいとこ取りしたらいいよ、意外と連携も楽だよってお話</li>
-</ul>
-</li>
-</ul>
-<p>また資料とかは見直しておきたい。そしてk8sの勉強再開したい。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-05-19T08:56:03.000Z"><a href="/objekumo/2018/05/19/mokumokuk8s201805/">2018-05-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2018/05/19/mokumokuk8s201805/">雲勉:大阪【もくもく会】Kubernetesもくもく会に参加しました。</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Kubernetes初心者ですが、参加してきました。みんなで集まって黙々とk8sのチュートリアルやったり、東京で同刻開催されていたk8s meetupの生中継流したり、実際の運用についての意見交換があったりしました。</p>
-<h3 id="知見"><a href="#知見" class="headerlink" title="知見"></a>知見</h3><ul>
-<li>KubernetesチュートリアルはHello Worldで終わるものが多い</li>
-<li>クラスタ作るだけならGKEでサクッとできてしまう<ul>
-<li>[<a href="https://cloud.google.com/kubernetes-engine/docs/tutorials/]" target="_blank" rel="noopener">https://cloud.google.com/kubernetes-engine/docs/tutorials/]</a></li>
-</ul>
-</li>
-<li>meetupの内容は濃い。みんなついていけなかった模様</li>
-<li>監視ツールもセットで覚える Ex: datadog</li>
-<li>rancherが2.0発表とのこと。こちらも要チェック</li>
-</ul>
-<h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><ul>
-<li>いろんな知識レベルの人が集まっていてちょうどよかった</li>
-<li>同じことに興味を持っている人との繋がりができてよかった</li>
-<li>とりあえず上司命令なのでもっとk8s勉強します</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2018-03-11T08:53:41.000Z"><a href="/objekumo/2018/03/11/jawsdays2018/">2018-03-11</a></time>
       
       
@@ -513,101 +162,59 @@
   
     <li><a href="/objekumo/tags/API-Gateway/">API Gateway</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/AWS/">AWS</a><small>25</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-API-Gateway/">AWS, API Gateway</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-Classic-VPN/">AWS, Classic VPN</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-CloudFront/">AWS, CloudFront</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-CloudFront-ELB/">AWS, CloudFront, ELB</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-CloudHSM-資格試験/">AWS, CloudHSM, 資格試験</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-EBS-資格試験/">AWS, EBS, 資格試験</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-EC2-RHEL7/">AWS, EC2, RHEL7</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-EKS/">AWS, EKS</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-Route53/">AWS, Route53</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-S3/">AWS, S3</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-SQS/">AWS, SQS</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-SSM-Systems-Manager/">AWS, SSM, Systems Manager</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-Snowball-Direct-Connect-S3-資格試験/">AWS, Snowball, Direct Connect, S3, 資格試験</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-WorkSpaces/">AWS, WorkSpaces</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-k3s-勉強会/">AWS, k3s, 勉強会</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-nginx-ALB-ELB/">AWS, nginx, ALB, ELB</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-勉強会/">AWS, 勉強会</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-負荷試験/">AWS, 負荷試験</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-資格試験/">AWS, 資格試験</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/AWS-資格試験-S3/">AWS, 資格試験, S3</a><small>0</small></li>
+    <li><a href="/objekumo/tags/AWS/">AWS</a><small>19</small></li>
   
     <li><a href="/objekumo/tags/Classic-VPN/">Classic VPN</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/CloudFront/">CloudFront</a><small>2</small></li>
+    <li><a href="/objekumo/tags/Cloud-Run/">Cloud Run</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/CloudHSM/">CloudHSM</a><small>1</small></li>
+    <li><a href="/objekumo/tags/CloudFront/">CloudFront</a><small>2</small></li>
   
     <li><a href="/objekumo/tags/CloudNative/">CloudNative</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/CloudNative-勉強会/">CloudNative, 勉強会</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/Direct-Connect/">Direct Connect</a><small>1</small></li>
-  
     <li><a href="/objekumo/tags/Docker/">Docker</a><small>1</small></li>
-  
-    <li><a href="/objekumo/tags/Docker-勉強会/">Docker, 勉強会</a><small>0</small></li>
-  
-    <li><a href="/objekumo/tags/EBS/">EBS</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/EC2/">EC2</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/EKS/">EKS</a><small>2</small></li>
-  
     <li><a href="/objekumo/tags/ELB/">ELB</a><small>2</small></li>
   
-    <li><a href="/objekumo/tags/GCP/">GCP</a><small>1</small></li>
+    <li><a href="/objekumo/tags/GCP/">GCP</a><small>2</small></li>
   
-    <li><a href="/objekumo/tags/GCP-勉強会/">GCP, 勉強会</a><small>0</small></li>
+    <li><a href="/objekumo/tags/GKE/">GKE</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/Linux/">Linux</a><small>1</small></li>
+    <li><a href="/objekumo/tags/JAWS/">JAWS</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/JAWS-DAYS-2020/">JAWS DAYS 2020</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/JAWS-UG/">JAWS-UG</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/Knative/">Knative</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/RHEL7/">RHEL7</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/Route53/">Route53</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/S3/">S3</a><small>3</small></li>
+    <li><a href="/objekumo/tags/S3/">S3</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/SQS/">SQS</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/SSM/">SSM</a><small>1</small></li>
-  
-    <li><a href="/objekumo/tags/Snowball/">Snowball</a><small>1</small></li>
-  
-    <li><a href="/objekumo/tags/WorkSpaces/">WorkSpaces</a><small>2</small></li>
+    <li><a href="/objekumo/tags/jawsdaysで人生が変わった話/">jawsdaysで人生が変わった話</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/k3s/">k3s</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/nginx/">nginx</a><small>1</small></li>
   
+    <li><a href="/objekumo/tags/エッジコンピューティング/">エッジコンピューティング</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/ファイアーエムブレム風花雪月/">ファイアーエムブレム風花雪月</a><small>1</small></li>
+  
     <li><a href="/objekumo/tags/勉強会/">勉強会</a><small>6</small></li>
+  
+    <li><a href="/objekumo/tags/試験/">試験</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/負荷試験/">負荷試験</a><small>3</small></li>
   
-    <li><a href="/objekumo/tags/資格試験/">資格試験</a><small>5</small></li>
+    <li><a href="/objekumo/tags/資格試験/">資格試験</a><small>1</small></li>
   
   </ul>
 </div>
@@ -617,7 +224,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2019 saramune
+  &copy; 2021 saramune
   
 </div>
 <div class="clearfix"></div></footer>

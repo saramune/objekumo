@@ -50,6 +50,40 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-06-11T23:45:00.000Z"><a href="/objekumo/2019/06/12/20190612/">2019-06-12</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/objekumo/2019/06/12/20190612/">RHEL7でnitro系インスタンスを使いたい</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>RHEL7でm5.largeを使いたかったのですけど</p>
+<h2 id="インスタンス立ち上げ時にインスタンスタイプが選択できない！！！"><a href="#インスタンス立ち上げ時にインスタンスタイプが選択できない！！！" class="headerlink" title="インスタンス立ち上げ時にインスタンスタイプが選択できない！！！"></a>インスタンス立ち上げ時にインスタンスタイプが選択できない！！！</h2><p>AWSが用意してくれてるAMIではnitro系で必要なドライバーのオプションが有効になっていないので、即起動はできないようです。なので一旦m4系で起動して、諸々設定して、AMIとるか、インスタンスタイプを変えるといいみたいです。RHEL8では即選べるみたい。<br>参考：<a href="https://qiita.com/wokamoto/items/5eb7458268ea5026627a" target="_blank" rel="noopener">https://qiita.com/wokamoto/items/5eb7458268ea5026627a</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-06-10T23:45:00.000Z"><a href="/objekumo/2019/06/11/20190611/">2019-06-11</a></time>
       
       
@@ -404,46 +438,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2019-05-20T23:45:00.000Z"><a href="/objekumo/2019/05/21/20190521/">2019-05-21</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/objekumo/2019/05/21/20190521/">CloudFrontとELBでSSLするときの502エラー</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>CloudFront(SSLあり) + ELB(SSLあり)な環境で、ときどきCloudFrontが502を返す現象が発生。</p>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>CloudFrontのDNS(xxxx.cloudfront.net)に直接アクセスがきていた。アクセス元はbot。</p>
-<ul>
-<li>xxxx.cloudfront.net/robots.txtにアクセスがくる</li>
-<li>CloudFrontがELBにリクエストを送る</li>
-<li>SSL証明書で登録してあるドメイン名と異なるので認証エラーとなる</li>
-</ul>
-<p>っちゅーことでした。エラー自体は正しいけれど、WAFとかで防ぐしかないのかなぁ。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -473,7 +467,7 @@
   
     <li><a href="/objekumo/tags/API-Gateway/">API Gateway</a><small>1</small></li>
   
-    <li><a href="/objekumo/tags/AWS/">AWS</a><small>18</small></li>
+    <li><a href="/objekumo/tags/AWS/">AWS</a><small>19</small></li>
   
     <li><a href="/objekumo/tags/Classic-VPN/">Classic VPN</a><small>1</small></li>
   
@@ -493,6 +487,8 @@
   
     <li><a href="/objekumo/tags/GKE/">GKE</a><small>1</small></li>
   
+    <li><a href="/objekumo/tags/JAWS/">JAWS</a><small>1</small></li>
+  
     <li><a href="/objekumo/tags/JAWS-DAYS-2020/">JAWS DAYS 2020</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/JAWS-UG/">JAWS-UG</a><small>1</small></li>
@@ -506,6 +502,8 @@
     <li><a href="/objekumo/tags/S3/">S3</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/SQS/">SQS</a><small>1</small></li>
+  
+    <li><a href="/objekumo/tags/jawsdaysで人生が変わった話/">jawsdaysで人生が変わった話</a><small>1</small></li>
   
     <li><a href="/objekumo/tags/k3s/">k3s</a><small>1</small></li>
   
@@ -531,7 +529,7 @@
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2020 saramune
+  &copy; 2021 saramune
   
 </div>
 <div class="clearfix"></div></footer>
